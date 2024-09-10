@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetCroquis" targetNamespace="http://tempuri.org/DataSetCroquis.xsd" xmlns:mstns="http://tempuri.org/DataSetCroquis.xsd" xmlns="http://tempuri.org/DataSetCroquis.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IglusoftConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IglusoftConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reportes.Properties.Settings.GlobalReference.Default.IglusoftConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EntradasSalidasCroquisTableAdapter" GeneratorDataComponentClassName="EntradasSalidasCroquisTableAdapter" Name="EntradasSalidasCroquis" UserDataComponentName="EntradasSalidasCroquisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EntradasSalidasCroquis.idEmpresa, EntradasSalidasCroquis.IdSede, EntradasSalidasCroquis.NoDocumento, EntradasSalidasCroquis.idServicio, EntradasSalidasCroquis.idItem, EntradasSalidasCroquis.columna1, 
+                         EntradasSalidasCroquis.columna2, EntradasSalidasCroquis.columna3, EntradasSalidasCroquis.columna4, EntradasSalidasCroquis.columna5, EntradasSalidasCroquis.columna6, Empresa.Empresa, Sede.Sede, 
+                         Servicio.Servicio
+FROM            EntradasSalidasCroquis INNER JOIN
+                         Empresa ON EntradasSalidasCroquis.idEmpresa = Empresa.IdEmpresa INNER JOIN
+                         Sede ON EntradasSalidasCroquis.IdSede = Sede.IdSede AND EntradasSalidasCroquis.idEmpresa = Sede.IdEmpresa INNER JOIN
+                         Servicio ON EntradasSalidasCroquis.idEmpresa = Servicio.IdEmpresa AND EntradasSalidasCroquis.idServicio = Servicio.IdServicio</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idEmpresa" DataSetColumn="idEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="NoDocumento" DataSetColumn="NoDocumento" />
+              <Mapping SourceColumn="idServicio" DataSetColumn="idServicio" />
+              <Mapping SourceColumn="idItem" DataSetColumn="idItem" />
+              <Mapping SourceColumn="columna1" DataSetColumn="columna1" />
+              <Mapping SourceColumn="columna2" DataSetColumn="columna2" />
+              <Mapping SourceColumn="columna3" DataSetColumn="columna3" />
+              <Mapping SourceColumn="columna4" DataSetColumn="columna4" />
+              <Mapping SourceColumn="columna5" DataSetColumn="columna5" />
+              <Mapping SourceColumn="columna6" DataSetColumn="columna6" />
+              <Mapping SourceColumn="Empresa" DataSetColumn="Empresa" />
+              <Mapping SourceColumn="Sede" DataSetColumn="Sede" />
+              <Mapping SourceColumn="Servicio" DataSetColumn="Servicio" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByNoDocumento" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNoDocumento" GeneratorSourceName="FillByNoDocumento" GetMethodModifier="Public" GetMethodName="GetDataByNoDocumento" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNoDocumento" UserSourceName="FillByNoDocumento">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EntradasSalidasCroquis.idEmpresa, EntradasSalidasCroquis.IdSede, EntradasSalidasCroquis.NoDocumento, EntradasSalidasCroquis.idServicio, EntradasSalidasCroquis.idItem, EntradasSalidasCroquis.columna1, 
+                         EntradasSalidasCroquis.columna2, EntradasSalidasCroquis.columna3, EntradasSalidasCroquis.columna4, EntradasSalidasCroquis.columna5, EntradasSalidasCroquis.columna6, Empresa.Empresa, Sede.Sede, 
+                         Servicio.Servicio
+FROM            EntradasSalidasCroquis INNER JOIN
+                         Empresa ON EntradasSalidasCroquis.idEmpresa = Empresa.IdEmpresa INNER JOIN
+                         Sede ON EntradasSalidasCroquis.idEmpresa = Sede.IdEmpresa AND EntradasSalidasCroquis.IdSede = Sede.IdSede INNER JOIN
+                         Servicio ON EntradasSalidasCroquis.idEmpresa = Servicio.IdEmpresa AND EntradasSalidasCroquis.idServicio = Servicio.IdServicio
+WHERE        (EntradasSalidasCroquis.idEmpresa = @idEmpresa) AND (EntradasSalidasCroquis.IdSede = @IdSede) AND (EntradasSalidasCroquis.idServicio = @idServicio) AND (EntradasSalidasCroquis.NoDocumento = @NoDocumento)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idEmpresa" ColumnName="idEmpresa" DataSourceName="IglusoftDesarrollo.dbo.EntradasSalidasCroquis" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.EntradasSalidasCroquis" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idServicio" ColumnName="idServicio" DataSourceName="IglusoftDesarrollo.dbo.EntradasSalidasCroquis" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="NoDocumento" ColumnName="NoDocumento" DataSourceName="IglusoftDesarrollo.dbo.EntradasSalidasCroquis" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@NoDocumento" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="NoDocumento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EntradasSalidasTempTableAdapter" GeneratorDataComponentClassName="EntradasSalidasTempTableAdapter" Name="EntradasSalidasTemp" UserDataComponentName="EntradasSalidasTempTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EntradasSalidasTemp.FechaInicio, EntradasSalidasTemp.Observaciones, EntradasSalidasTemp.Temperatura, EntradasSalidasTemp.Sello, EntradasSalidasTemp.IdVehiculo, EntradasSalidasTemp.Destino, 
+                         EntradasSalidasTemp.NombreConductor, Tercero.RazonSocial
+FROM            EntradasSalidasTemp INNER JOIN
+                         Tercero ON EntradasSalidasTemp.IdTercero = Tercero.IdTercero AND EntradasSalidasTemp.IdEmpresa = Tercero.IdEmpresa
+WHERE        (EntradasSalidasTemp.IdEmpresa = @idEmpresa) AND (EntradasSalidasTemp.IdSede = @idsede) AND (EntradasSalidasTemp.IdProceso = 2) AND (EntradasSalidasTemp.IdServicio = @idServicio) AND 
+                         (EntradasSalidasTemp.NoDocumento = @NoDocumento)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idEmpresa" ColumnName="IdEmpresa" DataSourceName="IglusoftDesarrollo.dbo.EntradasSalidasTemp" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idsede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.EntradasSalidasTemp" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idsede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idServicio" ColumnName="IdServicio" DataSourceName="IglusoftDesarrollo.dbo.EntradasSalidasTemp" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="NoDocumento" ColumnName="NoDocumento" DataSourceName="IglusoftDesarrollo.dbo.EntradasSalidasTemp" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@NoDocumento" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="NoDocumento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FechaInicio" DataSetColumn="FechaInicio" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="Temperatura" DataSetColumn="Temperatura" />
+              <Mapping SourceColumn="Sello" DataSetColumn="Sello" />
+              <Mapping SourceColumn="IdVehiculo" DataSetColumn="IdVehiculo" />
+              <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
+              <Mapping SourceColumn="NombreConductor" DataSetColumn="NombreConductor" />
+              <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetCroquis" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetCroquis" msprop:Generator_UserDSName="DataSetCroquis">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EntradasSalidasCroquis" msprop:Generator_TableClassName="EntradasSalidasCroquisDataTable" msprop:Generator_TableVarName="tableEntradasSalidasCroquis" msprop:Generator_TablePropName="EntradasSalidasCroquis" msprop:Generator_RowDeletingName="EntradasSalidasCroquisRowDeleting" msprop:Generator_RowChangingName="EntradasSalidasCroquisRowChanging" msprop:Generator_RowEvHandlerName="EntradasSalidasCroquisRowChangeEventHandler" msprop:Generator_RowDeletedName="EntradasSalidasCroquisRowDeleted" msprop:Generator_UserTableName="EntradasSalidasCroquis" msprop:Generator_RowChangedName="EntradasSalidasCroquisRowChanged" msprop:Generator_RowEvArgName="EntradasSalidasCroquisRowChangeEvent" msprop:Generator_RowClassName="EntradasSalidasCroquisRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idEmpresa" msprop:Generator_ColumnVarNameInTable="columnidEmpresa" msprop:Generator_ColumnPropNameInRow="idEmpresa" msprop:Generator_ColumnPropNameInTable="idEmpresaColumn" msprop:Generator_UserColumnName="idEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="NoDocumento" msprop:Generator_ColumnVarNameInTable="columnNoDocumento" msprop:Generator_ColumnPropNameInRow="NoDocumento" msprop:Generator_ColumnPropNameInTable="NoDocumentoColumn" msprop:Generator_UserColumnName="NoDocumento" type="xs:long" />
+              <xs:element name="idServicio" msprop:Generator_ColumnVarNameInTable="columnidServicio" msprop:Generator_ColumnPropNameInRow="idServicio" msprop:Generator_ColumnPropNameInTable="idServicioColumn" msprop:Generator_UserColumnName="idServicio" type="xs:int" />
+              <xs:element name="idItem" msprop:Generator_ColumnVarNameInTable="columnidItem" msprop:Generator_ColumnPropNameInRow="idItem" msprop:Generator_ColumnPropNameInTable="idItemColumn" msprop:Generator_UserColumnName="idItem" type="xs:int" />
+              <xs:element name="columna1" msprop:Generator_ColumnVarNameInTable="columncolumna1" msprop:Generator_ColumnPropNameInRow="columna1" msprop:Generator_ColumnPropNameInTable="columna1Column" msprop:Generator_UserColumnName="columna1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="columna2" msprop:Generator_ColumnVarNameInTable="columncolumna2" msprop:Generator_ColumnPropNameInRow="columna2" msprop:Generator_ColumnPropNameInTable="columna2Column" msprop:Generator_UserColumnName="columna2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="columna3" msprop:Generator_ColumnVarNameInTable="columncolumna3" msprop:Generator_ColumnPropNameInRow="columna3" msprop:Generator_ColumnPropNameInTable="columna3Column" msprop:Generator_UserColumnName="columna3">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="columna4" msprop:Generator_ColumnVarNameInTable="columncolumna4" msprop:Generator_ColumnPropNameInRow="columna4" msprop:Generator_ColumnPropNameInTable="columna4Column" msprop:Generator_UserColumnName="columna4">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="columna5" msprop:Generator_ColumnVarNameInTable="columncolumna5" msprop:Generator_ColumnPropNameInRow="columna5" msprop:Generator_ColumnPropNameInTable="columna5Column" msprop:Generator_UserColumnName="columna5">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="columna6" msprop:Generator_ColumnVarNameInTable="columncolumna6" msprop:Generator_ColumnPropNameInRow="columna6" msprop:Generator_ColumnPropNameInTable="columna6Column" msprop:Generator_UserColumnName="columna6">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sede" msprop:Generator_ColumnVarNameInTable="columnSede" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_UserColumnName="Sede" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Servicio" msprop:Generator_ColumnVarNameInTable="columnServicio" msprop:Generator_ColumnPropNameInRow="Servicio" msprop:Generator_ColumnPropNameInTable="ServicioColumn" msprop:Generator_UserColumnName="Servicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EntradasSalidasTemp" msprop:Generator_TableClassName="EntradasSalidasTempDataTable" msprop:Generator_TableVarName="tableEntradasSalidasTemp" msprop:Generator_RowChangedName="EntradasSalidasTempRowChanged" msprop:Generator_TablePropName="EntradasSalidasTemp" msprop:Generator_RowDeletingName="EntradasSalidasTempRowDeleting" msprop:Generator_RowChangingName="EntradasSalidasTempRowChanging" msprop:Generator_RowEvHandlerName="EntradasSalidasTempRowChangeEventHandler" msprop:Generator_RowDeletedName="EntradasSalidasTempRowDeleted" msprop:Generator_RowClassName="EntradasSalidasTempRow" msprop:Generator_UserTableName="EntradasSalidasTemp" msprop:Generator_RowEvArgName="EntradasSalidasTempRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FechaInicio" msprop:Generator_ColumnVarNameInTable="columnFechaInicio" msprop:Generator_ColumnPropNameInRow="FechaInicio" msprop:Generator_ColumnPropNameInTable="FechaInicioColumn" msprop:Generator_UserColumnName="FechaInicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" msprop:Generator_UserColumnName="Observaciones" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="600" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Temperatura" msprop:Generator_ColumnVarNameInTable="columnTemperatura" msprop:Generator_ColumnPropNameInRow="Temperatura" msprop:Generator_ColumnPropNameInTable="TemperaturaColumn" msprop:Generator_UserColumnName="Temperatura" type="xs:double" minOccurs="0" />
+              <xs:element name="Sello" msprop:Generator_ColumnVarNameInTable="columnSello" msprop:Generator_ColumnPropNameInRow="Sello" msprop:Generator_ColumnPropNameInTable="SelloColumn" msprop:Generator_UserColumnName="Sello" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdVehiculo" msprop:Generator_ColumnVarNameInTable="columnIdVehiculo" msprop:Generator_ColumnPropNameInRow="IdVehiculo" msprop:Generator_ColumnPropNameInTable="IdVehiculoColumn" msprop:Generator_UserColumnName="IdVehiculo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreConductor" msprop:Generator_ColumnVarNameInTable="columnNombreConductor" msprop:Generator_ColumnPropNameInRow="NombreConductor" msprop:Generator_ColumnPropNameInTable="NombreConductorColumn" msprop:Generator_UserColumnName="NombreConductor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EntradasSalidasCroquis" />
+      <xs:field xpath="mstns:idEmpresa" />
+      <xs:field xpath="mstns:IdSede" />
+      <xs:field xpath="mstns:NoDocumento" />
+      <xs:field xpath="mstns:idServicio" />
+      <xs:field xpath="mstns:idItem" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\bin\Release\BasculasLibrary.dll.config
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\bin\Release\BasculasLibrary.dll
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\bin\Release\BasculasLibrary.pdb
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\bin\Release\BasculasLibrary.xml
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.vbprojAssemblyReference.cache
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.Form1.resources
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.Resources.resources
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.vbproj.GenerateResource.cache
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.vbproj.CoreCompileInputs.cache
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.dll
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.xml
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.pdb
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\bin\Release\Gma.QrCodeNet.Encoding.dll
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\bin\Release\QRCoder.dll
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\bin\Release\Gma.QrCodeNet.Encoding.pdb
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\bin\Release\Gma.QrCodeNet.Encoding.xml
+C:\CodVs\Iglusoft\Iglusoft20\BasculasLibrary\obj\Release\BasculasLibrary.vbproj.CopyComplete

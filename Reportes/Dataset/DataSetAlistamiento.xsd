@@ -1,0 +1,1308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetAlistamiento" targetNamespace="http://tempuri.org/DataSetAlistamiento.xsd" xmlns:mstns="http://tempuri.org/DataSetAlistamiento.xsd" xmlns="http://tempuri.org/DataSetAlistamiento.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IglusoftConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IglusoftConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reportes.Properties.Settings.GlobalReference.Default.IglusoftConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AlistamientoInfoTableAdapter" GeneratorDataComponentClassName="AlistamientoInfoTableAdapter" Name="AListamientoInfo" UserDataComponentName="AlistamientoInfoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Alistamiento.IdAlistamiento, Alistamiento.IdEmpresa, Alistamiento.IdSede, Alistamiento.IdServicio, Tercero.RazonSocial, Alistamiento.Destino, Alistamiento.Fecha, Servicio.Servicio, Alistamiento.IdCamara, Alistamiento.Estado, 
+                         Usuario.NombreEmpleado, Sede.Sede, Alistamiento.Observaciones, TerceroSubBodega.SubBodega, Alistamiento.AplicacionAlistamiento
+FROM            Alistamiento INNER JOIN
+                         Tercero ON Alistamiento.IdTercero = Tercero.IdTercero AND Alistamiento.IdEmpresa = Tercero.IdEmpresa INNER JOIN
+                         Servicio ON Alistamiento.IdServicio = Servicio.IdServicio AND Alistamiento.IdEmpresa = Servicio.IdEmpresa INNER JOIN
+                         Usuario ON Alistamiento.IdUsuario = Usuario.IdUsuario INNER JOIN
+                         Sede ON Alistamiento.IdEmpresa = Sede.IdEmpresa AND Alistamiento.IdSede = Sede.IdSede INNER JOIN
+                         TerceroSubBodega ON Alistamiento.IdEmpresa = TerceroSubBodega.IdEmpresa AND Alistamiento.IdSubBodega = TerceroSubBodega.IdSubBodega AND Alistamiento.IdTercero = TerceroSubBodega.IdTercero</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="IdEmpresa" DataSetColumn="IdEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="IdServicio" DataSetColumn="IdServicio" />
+              <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
+              <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Servicio" DataSetColumn="Servicio" />
+              <Mapping SourceColumn="IdCamara" DataSetColumn="IdCamara" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="NombreEmpleado" DataSetColumn="NombreEmpleado" />
+              <Mapping SourceColumn="Sede" DataSetColumn="Sede" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="SubBodega" DataSetColumn="SubBodega" />
+              <Mapping SourceColumn="AplicacionAlistamiento" DataSetColumn="AplicacionAlistamiento" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdAlistamiento" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdAlistamiento" GeneratorSourceName="FillByIdAlistamiento" GetMethodModifier="Public" GetMethodName="GetDataByIdAlistamiento" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdAlistamiento" UserSourceName="FillByIdAlistamiento">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Alistamiento.IdAlistamiento, Alistamiento.IdEmpresa, Alistamiento.IdSede, Alistamiento.IdServicio, Tercero.RazonSocial, Alistamiento.Destino, Alistamiento.Fecha, Servicio.Servicio, Alistamiento.IdCamara, Alistamiento.Estado, 
+                         ISNULL(Usuario.NombreEmpleado, N'') AS NombreEmpleado, Sede.Sede, Alistamiento.Observaciones, TerceroSubBodega.SubBodega, Alistamiento.AplicacionAlistamiento
+FROM            Alistamiento INNER JOIN
+                         Tercero ON Alistamiento.IdTercero = Tercero.IdTercero AND Alistamiento.IdEmpresa = Tercero.IdEmpresa INNER JOIN
+                         Servicio ON Alistamiento.IdServicio = Servicio.IdServicio AND Alistamiento.IdEmpresa = Servicio.IdEmpresa INNER JOIN
+                         Sede ON Alistamiento.IdEmpresa = Sede.IdEmpresa AND Alistamiento.IdSede = Sede.IdSede INNER JOIN
+                         TerceroSubBodega ON Alistamiento.IdEmpresa = TerceroSubBodega.IdEmpresa AND Alistamiento.IdTercero = TerceroSubBodega.IdTercero AND Alistamiento.IdSubBodega = TerceroSubBodega.IdSubBodega LEFT OUTER JOIN
+                         Usuario ON Alistamiento.IdUsuario = Usuario.IdUsuario
+WHERE        (Alistamiento.IdAlistamiento = @IdAlistamiento) AND (Alistamiento.IdEmpresa = @IdEmpresa) AND (Alistamiento.IdSede = @IdSede) AND (Alistamiento.IdServicio = @IdServicio)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdAlistamiento" ColumnName="IdAlistamiento" DataSourceName="Iglusoft2.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="Iglusoft2.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="Iglusoft2.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdServicio" ColumnName="IdServicio" DataSourceName="Iglusoft2.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AlistamientoDetalleInfoTableAdapter" GeneratorDataComponentClassName="AlistamientoDetalleInfoTableAdapter" Name="AlistamientoDetalleInfo" UserDataComponentName="AlistamientoDetalleInfoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AlistamientoDetalle.IdAlistamiento, AlistamientoDetalle.IdEmpresa, AlistamientoDetalle.IdSede, AlistamientoDetalle.IdProducto, AlistamientoDetalle.IdServicio, derivedtbl_1.CodEscrito, AlistamientoDetalle.Pasillo, 
+                         AlistamientoDetalle.Nivel, AlistamientoDetalle.Posicion, Productos.Descripcion, derivedtbl_1.Lote, AlistamientoDetalle.Cantidades, AlistamientoDetalle.Unidades, AlistamientoDetalle.Kilos, 
+                         AlistamientoObservacion.Observacion, CAST(AlistamientoDetalle.Pasillo AS varchar) + ' -' + CAST(AlistamientoDetalle.Nivel AS varchar) + ' -' + CAST(AlistamientoDetalle.Posicion AS varchar) AS PocionLarga, Productos.IdGrupo, 
+                         GrupoProductos.NombreProductoGrupo, AlistamientoDetalle.IdCamara, Embalaje.EmbalajeE, Embalaje.IdEmbalaje, AlistamientoDetalle.IdObservacion, AlistamientoDetalle.UnidxEmb, 
+                         AlistamientoDetalle.FechaVencimiento
+FROM            AlistamientoDetalle INNER JOIN
+                             (SELECT        IdEmpresa, IdSede, NoDocumento, IdItem, IdServicio, IdProceso, CodEscrito, Lote
+                               FROM            EntradasSalidasItems
+                               WHERE        (IdProceso = 1)) AS derivedtbl_1 ON AlistamientoDetalle.IdEmpresa = derivedtbl_1.IdEmpresa AND AlistamientoDetalle.IdSede = derivedtbl_1.IdSede AND 
+                         AlistamientoDetalle.NoDocumento = derivedtbl_1.NoDocumento AND AlistamientoDetalle.IdItem = derivedtbl_1.IdItem AND AlistamientoDetalle.IdServicio = derivedtbl_1.IdServicio INNER JOIN
+                         Productos ON AlistamientoDetalle.IdEmpresa = Productos.IdEmpresa AND AlistamientoDetalle.IdProducto = Productos.IdProducto INNER JOIN
+                         GrupoProductos ON Productos.IdEmpresa = GrupoProductos.IdEmpresa AND Productos.IdGrupo = GrupoProductos.IdProductoGrupo INNER JOIN
+                         Embalaje ON AlistamientoDetalle.IdEmbalaje = Embalaje.IdEmbalaje AND AlistamientoDetalle.IdEmpresa = Embalaje.IdEmpresa LEFT OUTER JOIN
+                         AlistamientoObservacion ON AlistamientoDetalle.IdEmpresa = AlistamientoObservacion.IdEmpresa AND AlistamientoDetalle.IdSede = AlistamientoObservacion.IdSede AND 
+                         AlistamientoDetalle.IdObservacion = AlistamientoObservacion.IdObservacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="IdEmpresa" DataSetColumn="IdEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="IdServicio" DataSetColumn="IdServicio" />
+              <Mapping SourceColumn="CodEscrito" DataSetColumn="CodEscrito" />
+              <Mapping SourceColumn="Pasillo" DataSetColumn="Pasillo" />
+              <Mapping SourceColumn="Nivel" DataSetColumn="Nivel" />
+              <Mapping SourceColumn="Posicion" DataSetColumn="Posicion" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Lote" DataSetColumn="Lote" />
+              <Mapping SourceColumn="Cantidades" DataSetColumn="Cantidades" />
+              <Mapping SourceColumn="Unidades" DataSetColumn="Unidades" />
+              <Mapping SourceColumn="Kilos" DataSetColumn="Kilos" />
+              <Mapping SourceColumn="Observacion" DataSetColumn="Observacion" />
+              <Mapping SourceColumn="PocionLarga" DataSetColumn="PocionLarga" />
+              <Mapping SourceColumn="IdGrupo" DataSetColumn="IdGrupo" />
+              <Mapping SourceColumn="NombreProductoGrupo" DataSetColumn="NombreProductoGrupo" />
+              <Mapping SourceColumn="IdCamara" DataSetColumn="IdCamara" />
+              <Mapping SourceColumn="EmbalajeE" DataSetColumn="EmbalajeE" />
+              <Mapping SourceColumn="IdEmbalaje" DataSetColumn="IdEmbalaje" />
+              <Mapping SourceColumn="IdObservacion" DataSetColumn="IdObservacion" />
+              <Mapping SourceColumn="UnidxEmb" DataSetColumn="UnidxEmb" />
+              <Mapping SourceColumn="FechaVencimiento" DataSetColumn="FechaVencimiento" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdAlistamiento" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdAlistamiento" GeneratorSourceName="FillByIdAlistamiento" GetMethodModifier="Public" GetMethodName="GetDataByIdAlistamiento" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdAlistamiento" UserSourceName="FillByIdAlistamiento">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AlistamientoDetalle.IdAlistamiento, AlistamientoDetalle.IdEmpresa, AlistamientoDetalle.IdSede, AlistamientoDetalle.IdProducto, AlistamientoDetalle.IdServicio, Productos.Descripcion, AlistamientoDetalle.Cantidades, 
+                  AlistamientoDetalle.Unidades, AlistamientoDetalle.Kilos, AlistamientoObservacion.Observacion, CAST(EntradasSalidasItems.IdCamara AS varchar) + ' - ' + CAST(EntradasSalidasItems.Pasillo AS varchar) 
+                  + ' - ' + CAST(EntradasSalidasItems.Nivel AS varchar) + ' - ' + CAST(EntradasSalidasItems.Posicion AS varchar) AS PocionLarga, Productos.IdGrupo, GrupoProductos.NombreProductoGrupo, Embalaje.EmbalajeE, Embalaje.IdEmbalaje, 
+                  AlistamientoDetalle.IdObservacion, AlistamientoDetalle.CodEscrito, AlistamientoDetalle.Lote, AlistamientoDetalle.UnidxEmb, AlistamientoDetalle.FechaVencimiento, EntradasSalidasItems.Pasillo, EntradasSalidasItems.Nivel, 
+                  EntradasSalidasItems.Posicion, EntradasSalidasItems.IdCamara
+FROM     AlistamientoDetalle INNER JOIN
+                  Productos ON AlistamientoDetalle.IdEmpresa = Productos.IdEmpresa AND AlistamientoDetalle.IdProducto = Productos.IdProducto INNER JOIN
+                  GrupoProductos ON Productos.IdEmpresa = GrupoProductos.IdEmpresa AND Productos.IdGrupo = GrupoProductos.IdProductoGrupo INNER JOIN
+                  Embalaje ON AlistamientoDetalle.IdEmbalaje = Embalaje.IdEmbalaje AND AlistamientoDetalle.IdEmpresa = Embalaje.IdEmpresa INNER JOIN
+                  EntradasSalidasItems ON AlistamientoDetalle.IdEmpresa = EntradasSalidasItems.IdEmpresa AND AlistamientoDetalle.IdSede = EntradasSalidasItems.IdSede AND 
+                  AlistamientoDetalle.EntradaAfectada = EntradasSalidasItems.NoDocumento AND AlistamientoDetalle.ItemAfectado = EntradasSalidasItems.IdItem AND AlistamientoDetalle.IdServicio = EntradasSalidasItems.IdServicio LEFT OUTER JOIN
+                  AlistamientoObservacion ON AlistamientoDetalle.IdEmpresa = AlistamientoObservacion.IdEmpresa AND AlistamientoDetalle.IdSede = AlistamientoObservacion.IdSede AND 
+                  AlistamientoDetalle.IdObservacion = AlistamientoObservacion.IdObservacion
+WHERE  (AlistamientoDetalle.IdAlistamiento = @IdAlistamiento) AND (AlistamientoDetalle.IdEmpresa = @IdEmpresa) AND (AlistamientoDetalle.IdSede = @IdSede) AND (AlistamientoDetalle.IdServicio = @IdServicio) AND 
+                  (EntradasSalidasItems.IdProceso = 1)
+ORDER BY AlistamientoDetalle.Pasillo, AlistamientoDetalle.Posicion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdAlistamiento" ColumnName="IdAlistamiento" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdServicio" ColumnName="IdServicio" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AlistamientoDestinoTableAdapter" GeneratorDataComponentClassName="AlistamientoDestinoTableAdapter" Name="AlistamientoDestino" UserDataComponentName="AlistamientoDestinoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AlistamientoDetalle.IdAlistamiento, AlistamientoDetalle.IdEmpresa, AlistamientoDetalle.IdSede, AlistamientoDetalle.IdProducto, AlistamientoDetalle.IdServicio, derivedtbl_1.CodEscrito, AlistamientoDetalle.Pasillo, AlistamientoDetalle.Nivel, 
+                  AlistamientoDetalle.Posicion, Productos.Descripcion, derivedtbl_1.Lote, AlistamientoDetalle.Cantidades, AlistamientoDetalle.Unidades, AlistamientoDetalle.Kilos, CAST(AlistamientoDetalle.Pasillo AS varchar) 
+                  + ' -' + CAST(AlistamientoDetalle.Nivel AS varchar) + ' -' + CAST(AlistamientoDetalle.Posicion AS varchar) AS PocionLarga, Productos.IdGrupo, CantidadDestino.Destino, CantidadDestino.Cantidad
+FROM     AlistamientoDetalle INNER JOIN
+                      (SELECT IdEmpresa, IdSede, NoDocumento, IdItem, IdServicio, IdProceso, CodEscrito, Lote
+                       FROM      EntradasSalidasItems
+                       WHERE   (IdProceso = 1)) AS derivedtbl_1 ON AlistamientoDetalle.IdEmpresa = derivedtbl_1.IdEmpresa AND AlistamientoDetalle.IdSede = derivedtbl_1.IdSede AND AlistamientoDetalle.NoDocumento = derivedtbl_1.NoDocumento AND 
+                  AlistamientoDetalle.IdItem = derivedtbl_1.IdItem AND AlistamientoDetalle.IdServicio = derivedtbl_1.IdServicio INNER JOIN
+                  Productos ON AlistamientoDetalle.IdEmpresa = Productos.IdEmpresa AND AlistamientoDetalle.IdProducto = Productos.IdProducto LEFT OUTER JOIN
+                  CantidadDestino ON AlistamientoDetalle.IdEmpresa = CantidadDestino.IdEmpresa AND AlistamientoDetalle.IdSede = CantidadDestino.IdSede AND AlistamientoDetalle.IdAlistamiento = CantidadDestino.IdAlistamiento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="IdEmpresa" DataSetColumn="IdEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="IdServicio" DataSetColumn="IdServicio" />
+              <Mapping SourceColumn="CodEscrito" DataSetColumn="CodEscrito" />
+              <Mapping SourceColumn="Pasillo" DataSetColumn="Pasillo" />
+              <Mapping SourceColumn="Nivel" DataSetColumn="Nivel" />
+              <Mapping SourceColumn="Posicion" DataSetColumn="Posicion" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Lote" DataSetColumn="Lote" />
+              <Mapping SourceColumn="Cantidades" DataSetColumn="Cantidades" />
+              <Mapping SourceColumn="Unidades" DataSetColumn="Unidades" />
+              <Mapping SourceColumn="Kilos" DataSetColumn="Kilos" />
+              <Mapping SourceColumn="PocionLarga" DataSetColumn="PocionLarga" />
+              <Mapping SourceColumn="IdGrupo" DataSetColumn="IdGrupo" />
+              <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdAlistamiento" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdAlistamiento" GeneratorSourceName="FillByIdAlistamiento" GetMethodModifier="Public" GetMethodName="GetDataByIdAlistamiento" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdAlistamiento" UserSourceName="FillByIdAlistamiento">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AlistamientoDetalle.IdAlistamiento, AlistamientoDetalle.IdEmpresa, AlistamientoDetalle.IdSede, AlistamientoDetalle.IdProducto, AlistamientoDetalle.IdServicio, derivedtbl_1.CodEscrito, AlistamientoDetalle.Pasillo, 
+                         AlistamientoDetalle.Nivel, AlistamientoDetalle.Posicion, Productos.Descripcion, derivedtbl_1.Lote, AlistamientoDetalle.Cantidades, AlistamientoDetalle.Unidades, AlistamientoDetalle.Kilos, 
+                         CAST(AlistamientoDetalle.Pasillo AS varchar) + ' -' + CAST(AlistamientoDetalle.Nivel AS varchar) + ' -' + CAST(AlistamientoDetalle.Posicion AS varchar) AS PocionLarga, Productos.IdGrupo, CantidadDestino.Destino, 
+                         CantidadDestino.Cantidad, AlistamientoDetalle.UnidxEmb
+FROM            AlistamientoDetalle INNER JOIN
+                             (SELECT        IdEmpresa, IdSede, NoDocumento, IdItem, IdServicio, IdProceso, CodEscrito, Lote
+                               FROM            EntradasSalidasItems
+                               WHERE        (IdProceso = 1)) AS derivedtbl_1 ON AlistamientoDetalle.IdEmpresa = derivedtbl_1.IdEmpresa AND AlistamientoDetalle.IdSede = derivedtbl_1.IdSede AND 
+                         AlistamientoDetalle.NoDocumento = derivedtbl_1.NoDocumento AND AlistamientoDetalle.IdItem = derivedtbl_1.IdItem AND AlistamientoDetalle.IdServicio = derivedtbl_1.IdServicio INNER JOIN
+                         Productos ON AlistamientoDetalle.IdEmpresa = Productos.IdEmpresa AND AlistamientoDetalle.IdProducto = Productos.IdProducto LEFT OUTER JOIN
+                         CantidadDestino ON AlistamientoDetalle.IdEmpresa = CantidadDestino.IdEmpresa AND AlistamientoDetalle.IdSede = CantidadDestino.IdSede AND AlistamientoDetalle.IdAlistamiento = CantidadDestino.IdAlistamiento
+WHERE        (AlistamientoDetalle.IdAlistamiento = @IdAlistamiento) AND (AlistamientoDetalle.IdEmpresa = @IdEmpresa) AND (AlistamientoDetalle.IdSede = @IdSede) AND (AlistamientoDetalle.IdServicio = @IdServicio)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdAlistamiento" ColumnName="IdAlistamiento" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdServicio" ColumnName="IdServicio" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AlistamientoDestino2TableAdapter" GeneratorDataComponentClassName="AlistamientoDestino2TableAdapter" Name="AlistamientoDestino2" UserDataComponentName="AlistamientoDestino2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDestinos" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataDestinos" GeneratorSourceName="FillDestinos" GetMethodModifier="Public" GetMethodName="GetDataDestinos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataDestinos" UserSourceName="FillDestinos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CantidadDestino.Destino, CantidadDestino.Cantidad, Productos.Descripcion, AlistamientoDetalle.CodEscrito
+FROM            AlistamientoDetalle INNER JOIN
+                         CantidadDestino ON AlistamientoDetalle.IdEmpresa = CantidadDestino.IdEmpresa AND AlistamientoDetalle.IdSede = CantidadDestino.IdSede AND AlistamientoDetalle.IdAlistamiento = CantidadDestino.IdAlistamiento AND 
+                         AlistamientoDetalle.IdProducto = CantidadDestino.IdProducto INNER JOIN
+                         Productos ON AlistamientoDetalle.IdEmpresa = Productos.IdEmpresa AND CantidadDestino.IdProducto = Productos.IdProducto AND CantidadDestino.IdEmpresa = Productos.IdEmpresa
+WHERE        (AlistamientoDetalle.IdSede = @IdSede) AND (AlistamientoDetalle.IdEmpresa = @IdEmpresa) AND (AlistamientoDetalle.IdAlistamiento = @IdAlistamiento) AND (AlistamientoDetalle.IdServicio = @IdServicio)
+GROUP BY CantidadDestino.Destino, CantidadDestino.Cantidad, Productos.Descripcion, AlistamientoDetalle.CodEscrito</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdAlistamiento" ColumnName="IdAlistamiento" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdServicio" ColumnName="IdServicio" DataSourceName="Iglusoft2.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="CodEscrito" DataSetColumn="CodEscrito" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InventarioAlistamientoTableAdapter" GeneratorDataComponentClassName="InventarioAlistamientoTableAdapter" Name="InventarioAlistamiento" UserDataComponentName="InventarioAlistamientoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AlistamientoDetalle.IdCamara, AlistamientoDetalle.Pasillo, AlistamientoDetalle.Nivel, AlistamientoDetalle.Posicion, AlistamientoDetalle.Fecha, AlistamientoDetalle.CodEscrito, Productos.Descripcion, 
+                         AlistamientoDetalle.Cantidades, AlistamientoDetalle.Unidades, AlistamientoDetalle.Kilos, AlistamientoDetalle.IdAlistamiento, Alistamiento.Destino, Alistamiento.Estado, Tercero.RazonSocial, Alistamiento.IdSede
+FROM            Alistamiento INNER JOIN
+                         AlistamientoDetalle ON Alistamiento.IdAlistamiento = AlistamientoDetalle.IdAlistamiento AND Alistamiento.IdEmpresa = AlistamientoDetalle.IdEmpresa AND Alistamiento.IdSede = AlistamientoDetalle.IdSede AND 
+                         Alistamiento.IdServicio = AlistamientoDetalle.IdServicio INNER JOIN
+                         ProductosCodigos ON AlistamientoDetalle.IdProducto = ProductosCodigos.IdProducto AND AlistamientoDetalle.IdEmpresa = ProductosCodigos.IdEmpresa INNER JOIN
+                         Productos ON ProductosCodigos.IdProducto = Productos.IdProducto AND ProductosCodigos.IdEmpresa = Productos.IdEmpresa AND ProductosCodigos.IdCliente = Productos.IdCliente INNER JOIN
+                         Tercero ON Alistamiento.IdTercero = Tercero.IdTercero AND Alistamiento.IdEmpresa = Tercero.IdEmpresa
+WHERE        (Alistamiento.IdEmpresa = @IdEmpresa) AND (Alistamiento.IdSede = @IdSede) AND (Alistamiento.IdServicio = @IdServicio) AND (Alistamiento.IdTercero = @Idtercero) AND (ProductosCodigos.Principal = 'true') AND 
+                         (Alistamiento.Estado = 2)
+ORDER BY AlistamientoDetalle.IdAlistamiento, ProductosCodigos.Codigo, Productos.Descripcion, AlistamientoDetalle.IdCamara, AlistamientoDetalle.Pasillo, AlistamientoDetalle.Nivel, AlistamientoDetalle.Posicion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="IglusoftDesarrollo.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdServicio" ColumnName="IdServicio" DataSourceName="IglusoftDesarrollo.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Idtercero" ColumnName="IdTercero" DataSourceName="IglusoftDesarrollo.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Idtercero" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdTercero" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdCamara" DataSetColumn="IdCamara" />
+              <Mapping SourceColumn="Pasillo" DataSetColumn="Pasillo" />
+              <Mapping SourceColumn="Nivel" DataSetColumn="Nivel" />
+              <Mapping SourceColumn="Posicion" DataSetColumn="Posicion" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="CodEscrito" DataSetColumn="CodEscrito" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Cantidades" DataSetColumn="Cantidades" />
+              <Mapping SourceColumn="Unidades" DataSetColumn="Unidades" />
+              <Mapping SourceColumn="Kilos" DataSetColumn="Kilos" />
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableAlistamientoVencidoTableAdapter" GeneratorDataComponentClassName="DataTableAlistamientoVencidoTableAdapter" Name="DataTableAlistamientoVencido" UserDataComponentName="DataTableAlistamientoVencidoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Alistamiento.IdAlistamiento, Tercero.RazonSocial, Alistamiento.Destino, Alistamiento.Fecha, Servicio.Servicio, Sede.Sede
+FROM            Alistamiento INNER JOIN
+                         Tercero ON Alistamiento.IdTercero = Tercero.IdTercero AND Alistamiento.IdEmpresa = Tercero.IdEmpresa INNER JOIN
+                         Servicio ON Alistamiento.IdServicio = Servicio.IdServicio AND Alistamiento.IdEmpresa = Servicio.IdEmpresa INNER JOIN
+                         Sede ON Alistamiento.IdEmpresa = Sede.IdEmpresa AND Alistamiento.IdSede = Sede.IdSede
+WHERE        (Alistamiento.Estado = 2)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
+              <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Servicio" DataSetColumn="Servicio" />
+              <Mapping SourceColumn="Sede" DataSetColumn="Sede" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAlistamientosVencidos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAlistamientosVencidos" GeneratorSourceName="FillByAlistamientosVencidos" GetMethodModifier="Public" GetMethodName="GetDataByAlistamientosVencidos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAlistamientosVencidos" UserSourceName="FillByAlistamientosVencidos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Alistamiento.IdAlistamiento, Tercero.RazonSocial, Alistamiento.Destino, Alistamiento.Fecha, Servicio.Servicio, Sede.Sede
+FROM            Alistamiento INNER JOIN
+                         Tercero ON Alistamiento.IdTercero = Tercero.IdTercero AND Alistamiento.IdEmpresa = Tercero.IdEmpresa INNER JOIN
+                         Servicio ON Alistamiento.IdServicio = Servicio.IdServicio AND Alistamiento.IdEmpresa = Servicio.IdEmpresa INNER JOIN
+                         Sede ON Alistamiento.IdEmpresa = Sede.IdEmpresa AND Alistamiento.IdSede = Sede.IdSede
+WHERE        (Alistamiento.Estado = 2) AND (DATEDIFF(hour, Alistamiento.Fecha, { fn NOW() }) &gt; 24) AND
+(Alistamiento.IdEmpresa = @IdEmpresa) AND (Alistamiento.IdSede = @IdSede)
+ORDER BY Alistamiento.Fecha </CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="IglusoftDesarrollo.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AlistamientosActivosTableAdapter" GeneratorDataComponentClassName="AlistamientosActivosTableAdapter" Name="AlistamientosActivos" UserDataComponentName="AlistamientosActivosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataAlistActivos" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetDataAlistActivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataAlistActivos" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CAST(EntradasSalidasItems.IdCamara AS varchar) + ' - ' + CAST(EntradasSalidasItems.Pasillo AS varchar) + ' - ' + CAST(EntradasSalidasItems.Nivel AS varchar) + ' - ' + CAST(EntradasSalidasItems.Posicion AS varchar) 
+                         AS PocionLarga, EntradasSalidasItems.CodEscrito, Productos.Descripcion, AlistamientoDetalle.Lote, AlistamientoDetalle.Cantidades, AlistamientoDetalle.Unidades, AlistamientoDetalle.Kilos, AlistamientoDetalle.Fecha, 
+                         AlistamientoObservacion.Observacion, AlistamientoDetalle.IdAlistamiento, Tercero.RazonSocial, Sede.Sede, AlistamientoDetalle.Estado, AlistamientoDetalle.IdServicio, Servicio.Servicio, Alistamiento.IdTercero, 
+                         Alistamiento.Destino
+FROM            AlistamientoDetalle INNER JOIN
+                         Productos ON AlistamientoDetalle.IdEmpresa = Productos.IdEmpresa AND AlistamientoDetalle.IdProducto = Productos.IdProducto INNER JOIN
+                         GrupoProductos ON Productos.IdEmpresa = GrupoProductos.IdEmpresa AND Productos.IdGrupo = GrupoProductos.IdProductoGrupo INNER JOIN
+                         Embalaje ON AlistamientoDetalle.IdEmbalaje = Embalaje.IdEmbalaje AND AlistamientoDetalle.IdEmpresa = Embalaje.IdEmpresa INNER JOIN
+                         EntradasSalidasItems ON AlistamientoDetalle.IdEmpresa = EntradasSalidasItems.IdEmpresa AND AlistamientoDetalle.IdSede = EntradasSalidasItems.IdSede AND 
+                         AlistamientoDetalle.EntradaAfectada = EntradasSalidasItems.NoDocumento AND AlistamientoDetalle.ItemAfectado = EntradasSalidasItems.IdItem AND 
+                         AlistamientoDetalle.IdServicio = EntradasSalidasItems.IdServicio INNER JOIN
+                         Sede ON AlistamientoDetalle.IdEmpresa = Sede.IdEmpresa AND AlistamientoDetalle.IdSede = Sede.IdSede INNER JOIN
+                         Servicio ON AlistamientoDetalle.IdEmpresa = Servicio.IdEmpresa AND AlistamientoDetalle.IdServicio = Servicio.IdServicio INNER JOIN
+                         Alistamiento ON AlistamientoDetalle.IdAlistamiento = Alistamiento.IdAlistamiento AND AlistamientoDetalle.IdEmpresa = Alistamiento.IdEmpresa AND AlistamientoDetalle.IdSede = Alistamiento.IdSede INNER JOIN
+                         Tercero ON Alistamiento.IdTercero = Tercero.IdTercero AND Alistamiento.IdEmpresa = Tercero.IdEmpresa LEFT OUTER JOIN
+                         AlistamientoObservacion ON AlistamientoDetalle.IdEmpresa = AlistamientoObservacion.IdEmpresa AND AlistamientoDetalle.IdSede = AlistamientoObservacion.IdSede AND 
+                         AlistamientoDetalle.IdObservacion = AlistamientoObservacion.IdObservacion
+WHERE        (AlistamientoDetalle.Estado = 2) AND (AlistamientoDetalle.IdEmpresa = @IdEmpresa) AND (AlistamientoDetalle.IdSede = @IdSede) AND (EntradasSalidasItems.IdProceso = 1) AND (Alistamiento.IdTercero = @IdTercero)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="IglusoftDesarrollo.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.AlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdTercero" ColumnName="IdTercero" DataSourceName="IglusoftDesarrollo.dbo.Alistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdTercero" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdTercero" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="IdServicio" DataSetColumn="IdServicio" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
+              <Mapping SourceColumn="Servicio" DataSetColumn="Servicio" />
+              <Mapping SourceColumn="Sede" DataSetColumn="Sede" />
+              <Mapping SourceColumn="Cantidades" DataSetColumn="Cantidades" />
+              <Mapping SourceColumn="Unidades" DataSetColumn="Unidades" />
+              <Mapping SourceColumn="Kilos" DataSetColumn="Kilos" />
+              <Mapping SourceColumn="PocionLarga" DataSetColumn="PocionLarga" />
+              <Mapping SourceColumn="CodEscrito" DataSetColumn="CodEscrito" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Lote" DataSetColumn="Lote" />
+              <Mapping SourceColumn="Observacion" DataSetColumn="Observacion" />
+              <Mapping SourceColumn="IdTercero" DataSetColumn="IdTercero" />
+              <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TareaTableAdapter" GeneratorDataComponentClassName="TareaTableAdapter" Name="Tarea" UserDataComponentName="TareaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectName="IglusoftDesarrollo.dbo.Tarea" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Tarea] WHERE (([IdEmpresa] = @Original_IdEmpresa) AND ([IdSede] = @Original_IdSede) AND ([IdTarea] = @Original_IdTarea) AND ((@IsNull_TipoTarea = 1 AND [TipoTarea] IS NULL) OR ([TipoTarea] = @Original_TipoTarea)) AND ((@IsNull_IdCargo = 1 AND [IdCargo] IS NULL) OR ([IdCargo] = @Original_IdCargo)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdSede" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdTarea" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdTarea" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TipoTarea" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TipoTarea" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TipoTarea" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TipoTarea" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCargo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCargo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Tarea] ([IdEmpresa], [IdSede], [TipoTarea], [IdCargo], [Estado], [Fecha]) VALUES (@IdEmpresa, @IdSede, @TipoTarea, @IdCargo, @Estado, @Fecha);
+SELECT IdEmpresa, IdSede, IdTarea, TipoTarea, IdCargo, Estado, Fecha FROM Tarea WHERE (IdEmpresa = @IdEmpresa) AND (IdSede = @IdSede) AND (IdTarea = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TipoTarea" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TipoTarea" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IdEmpresa, IdSede, IdTarea, TipoTarea, IdCargo, Estado, Fecha
+FROM            Tarea</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Tarea] SET [IdEmpresa] = @IdEmpresa, [IdSede] = @IdSede, [TipoTarea] = @TipoTarea, [IdCargo] = @IdCargo, [Estado] = @Estado, [Fecha] = @Fecha WHERE (([IdEmpresa] = @Original_IdEmpresa) AND ([IdSede] = @Original_IdSede) AND ([IdTarea] = @Original_IdTarea) AND ((@IsNull_TipoTarea = 1 AND [TipoTarea] IS NULL) OR ([TipoTarea] = @Original_TipoTarea)) AND ((@IsNull_IdCargo = 1 AND [IdCargo] IS NULL) OR ([IdCargo] = @Original_IdCargo)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)));
+SELECT IdEmpresa, IdSede, IdTarea, TipoTarea, IdCargo, Estado, Fecha FROM Tarea WHERE (IdEmpresa = @IdEmpresa) AND (IdSede = @IdSede) AND (IdTarea = @IdTarea)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TipoTarea" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TipoTarea" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdSede" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdTarea" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdTarea" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TipoTarea" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TipoTarea" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TipoTarea" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TipoTarea" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCargo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCargo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdTarea" ColumnName="IdTarea" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdTarea" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdTarea" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdEmpresa" DataSetColumn="IdEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="IdTarea" DataSetColumn="IdTarea" />
+              <Mapping SourceColumn="TipoTarea" DataSetColumn="TipoTarea" />
+              <Mapping SourceColumn="IdCargo" DataSetColumn="IdCargo" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectName="IglusoftDesarrollo.dbo.Tarea" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAlistamientoByEmpBySed" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetAlistamientoByEmpBySed" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAlistamientoByEmpBySed" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Estado, Fecha, IdCargo, IdEmpresa, IdSede, IdTarea, TipoTarea FROM Tarea WHERE (IdEmpresa = @IdEmpresa) AND (IdSede = @IdSede) AND (Estado = 1) AND (IdCargo = @IdCargo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="IdCargo" ColumnName="IdCargo" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCargo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNewTask" Modifier="Public" Name="InsertNewTask" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertNewTask">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tarea] ([IdEmpresa], [IdSede], [TipoTarea], [IdCargo], [Estado], [Fecha]) VALUES (@IdEmpresa, @IdSede, @TipoTarea, @IdCargo, @Estado, @Fecha);
+SELECT IdEmpresa, IdSede, IdTarea, TipoTarea, IdCargo, Estado, Fecha FROM Tarea WHERE (IdEmpresa = @IdEmpresa) AND (IdSede = @IdSede) AND (IdTarea = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="TipoTarea" ColumnName="TipoTarea" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TipoTarea" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="TipoTarea" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="IdCargo" ColumnName="IdCargo" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCargo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Estado" ColumnName="Estado" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Estado" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Fecha" ColumnName="Fecha" DataSourceName="IglusoftDesarrollo.dbo.Tarea" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="consultaAlistamientoTipoAplicacionTableAdapter" GeneratorDataComponentClassName="consultaAlistamientoTipoAplicacionTableAdapter" Name="consultaAlistamientoTipoAplicacion" UserDataComponentName="consultaAlistamientoTipoAplicacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectName="IglusoftDesarrollo.dbo.consultaAlistamientoTipoAplicacion" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataTipoaplicacion" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetDataTipoaplicacion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataTipoaplicacion" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.consultaAlistamientoTipoAplicacion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AplicacionAlistamiento" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="AplicacionAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.consultaAlistamientoTipoAplicacion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AplicacionAlistamiento" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="AplicacionAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.consultaAlistamientoTipoAplicacion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AplicacionAlistamiento" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.consultaAlistamientoTipoAplicacion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AplicacionAlistamiento" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="AplicacionAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="IdEmpresa" DataSetColumn="IdEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="IdServicio" DataSetColumn="IdServicio" />
+              <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
+              <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Servicio" DataSetColumn="Servicio" />
+              <Mapping SourceColumn="IdCamara" DataSetColumn="IdCamara" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="NombreEmpleado" DataSetColumn="NombreEmpleado" />
+              <Mapping SourceColumn="Sede" DataSetColumn="Sede" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="SubBodega" DataSetColumn="SubBodega" />
+              <Mapping SourceColumn="AplicacionAlistamiento" DataSetColumn="AplicacionAlistamiento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="verificacionAlistamientoDetalleTableAdapter" GeneratorDataComponentClassName="verificacionAlistamientoDetalleTableAdapter" Name="VerificacionAlistamientoDetalle" UserDataComponentName="verificacionAlistamientoDetalleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetVerificacionAlistamientoDetalle" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetVerificacionAlistamientoDetalle" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetVerificacionAlistamientoDetalle" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Productos.Descripcion, ISNULL(AlistamientoObservacion.Observacion, '') AS Observacion , CAST(EntradasSalidasItems.IdCamara AS varchar) + ' - ' + CAST(EntradasSalidasItems.Pasillo AS varchar) + ' - ' + CAST(EntradasSalidasItems.Nivel AS varchar) 
+                         + ' - ' + CAST(EntradasSalidasItems.Posicion AS varchar) AS PocionLarga, Productos.IdGrupo, GrupoProductos.NombreProductoGrupo, Embalaje.EmbalajeE, Embalaje.IdEmbalaje, EntradasSalidasItems.Pasillo, 
+                         EntradasSalidasItems.Nivel, EntradasSalidasItems.Posicion, EntradasSalidasItems.IdCamara, VerificacionAlistamientoDetalle.IdAlistamiento, VerificacionAlistamientoDetalle.IdEmpresa, VerificacionAlistamientoDetalle.IdSede, 
+                         VerificacionAlistamientoDetalle.IdProducto, VerificacionAlistamientoDetalle.IdServicio, VerificacionAlistamientoDetalle.FechaVencimiento, VerificacionAlistamientoDetalle.Cantidades, VerificacionAlistamientoDetalle.Unidades, 
+                         VerificacionAlistamientoDetalle.Kilos, VerificacionAlistamientoDetalle.IdObservacion, VerificacionAlistamientoDetalle.CodEscrito, VerificacionAlistamientoDetalle.Lote, ISNULL(VerificacionAlistamientoDetalle.Observaciones, '') AS Observaciones, 
+                         VerificacionAlistamientoDetalle.FechaAprobacion, Usuario.UserName
+FROM            Productos INNER JOIN
+                         GrupoProductos ON Productos.IdEmpresa = GrupoProductos.IdEmpresa AND Productos.IdGrupo = GrupoProductos.IdProductoGrupo INNER JOIN
+                         VerificacionAlistamientoDetalle ON Productos.IdProducto = VerificacionAlistamientoDetalle.IdProducto AND Productos.IdEmpresa = VerificacionAlistamientoDetalle.IdEmpresa INNER JOIN
+                         Embalaje ON VerificacionAlistamientoDetalle.IdEmpresa = Embalaje.IdEmpresa AND VerificacionAlistamientoDetalle.IdEmbalaje = Embalaje.IdEmbalaje INNER JOIN
+                         EntradasSalidasItems ON VerificacionAlistamientoDetalle.IdEmpresa = EntradasSalidasItems.IdEmpresa AND VerificacionAlistamientoDetalle.IdSede = EntradasSalidasItems.IdSede AND 
+                         VerificacionAlistamientoDetalle.IdServicio = EntradasSalidasItems.IdServicio AND VerificacionAlistamientoDetalle.EntradaAfectada = EntradasSalidasItems.NoDocumento AND 
+                         VerificacionAlistamientoDetalle.ItemAfectado = EntradasSalidasItems.IdItem INNER JOIN
+                         Usuario ON VerificacionAlistamientoDetalle.IdUsuario = Usuario.IdUsuario LEFT OUTER JOIN
+                         AlistamientoObservacion ON VerificacionAlistamientoDetalle.IdObservacion = AlistamientoObservacion.IdObservacion AND VerificacionAlistamientoDetalle.IdSede = AlistamientoObservacion.IdSede AND 
+                         VerificacionAlistamientoDetalle.IdEmpresa = AlistamientoObservacion.IdEmpresa
+WHERE        (EntradasSalidasItems.IdProceso = 1) OR
+                         (VerificacionAlistamientoDetalle.IdAlistamiento = @IdAlistamiento) AND (VerificacionAlistamientoDetalle.IdEmpresa = @IdEmpresa) AND (VerificacionAlistamientoDetalle.IdSede = @IdSede) AND 
+                         (VerificacionAlistamientoDetalle.IdServicio = @IdServicio)
+ORDER BY EntradasSalidasItems.Pasillo, EntradasSalidasItems.Nivel</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdAlistamiento" ColumnName="IdAlistamiento" DataSourceName="IglusoftDesarrollo.dbo.VerificacionAlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="IglusoftDesarrollo.dbo.VerificacionAlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.VerificacionAlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdServicio" ColumnName="IdServicio" DataSourceName="IglusoftDesarrollo.dbo.VerificacionAlistamientoDetalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="IdEmpresa" DataSetColumn="IdEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="IdServicio" DataSetColumn="IdServicio" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Cantidades" DataSetColumn="Cantidades" />
+              <Mapping SourceColumn="Unidades" DataSetColumn="Unidades" />
+              <Mapping SourceColumn="Kilos" DataSetColumn="Kilos" />
+              <Mapping SourceColumn="Observacion" DataSetColumn="Observacion" />
+              <Mapping SourceColumn="PocionLarga" DataSetColumn="PocionLarga" />
+              <Mapping SourceColumn="IdGrupo" DataSetColumn="IdGrupo" />
+              <Mapping SourceColumn="NombreProductoGrupo" DataSetColumn="NombreProductoGrupo" />
+              <Mapping SourceColumn="EmbalajeE" DataSetColumn="EmbalajeE" />
+              <Mapping SourceColumn="IdEmbalaje" DataSetColumn="IdEmbalaje" />
+              <Mapping SourceColumn="IdObservacion" DataSetColumn="IdObservacion" />
+              <Mapping SourceColumn="CodEscrito" DataSetColumn="CodEscrito" />
+              <Mapping SourceColumn="Lote" DataSetColumn="Lote" />
+              <Mapping SourceColumn="FechaVencimiento" DataSetColumn="FechaVencimiento" />
+              <Mapping SourceColumn="Pasillo" DataSetColumn="Pasillo" />
+              <Mapping SourceColumn="Nivel" DataSetColumn="Nivel" />
+              <Mapping SourceColumn="Posicion" DataSetColumn="Posicion" />
+              <Mapping SourceColumn="IdCamara" DataSetColumn="IdCamara" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="FechaAprobacion" DataSetColumn="FechaAprobacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VerificacionAlistamientoTableAdapter" GeneratorDataComponentClassName="VerificacionAlistamientoTableAdapter" Name="VerificacionAlistamiento" UserDataComponentName="VerificacionAlistamientoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectName="IglusoftDesarrollo.dbo.VerificacionAlistamiento" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataVerificacionAlistamientoEncabezado" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetDataVerificacionAlistamientoEncabezado" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataVerificacionAlistamientoEncabezado" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [VerificacionAlistamiento] WHERE (([IdAlistamiento] = @Original_IdAlistamiento) AND ([IdEmpresa] = @Original_IdEmpresa) AND ([IdSede] = @Original_IdSede) AND ([IdServicio] = @Original_IdServicio) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdSede" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [VerificacionAlistamiento] ([IdAlistamiento], [IdEmpresa], [IdSede], [IdServicio], [Fecha]) VALUES (@IdAlistamiento, @IdEmpresa, @IdSede, @IdServicio, @Fecha);
+SELECT ISNULL(Observaciones, '') AS ObservacionesEncabezadoVerificacion, IdAlistamiento, IdEmpresa, IdSede, IdServicio, Fecha FROM VerificacionAlistamiento WHERE (IdAlistamiento = @IdAlistamiento) AND (IdEmpresa = @IdEmpresa) AND (IdSede = @IdSede) AND (IdServicio = @IdServicio)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ISNULL(Observaciones, '') AS ObservacionesEncabezadoVerificacion, IdAlistamiento, IdEmpresa, IdSede, IdServicio, Fecha
+FROM            VerificacionAlistamiento
+WHERE        (IdEmpresa = @IdEmpresa) AND (IdSede = @IdSede) AND (IdServicio = @IdServicio) AND (IdAlistamiento = @IdAlistamiento)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="IglusoftDesarrollo.dbo.VerificacionAlistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="IglusoftDesarrollo.dbo.VerificacionAlistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdServicio" ColumnName="IdServicio" DataSourceName="IglusoftDesarrollo.dbo.VerificacionAlistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdAlistamiento" ColumnName="IdAlistamiento" DataSourceName="IglusoftDesarrollo.dbo.VerificacionAlistamiento" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [VerificacionAlistamiento] SET [IdAlistamiento] = @IdAlistamiento, [IdEmpresa] = @IdEmpresa, [IdSede] = @IdSede, [IdServicio] = @IdServicio, [Fecha] = @Fecha WHERE (([IdAlistamiento] = @Original_IdAlistamiento) AND ([IdEmpresa] = @Original_IdEmpresa) AND ([IdSede] = @Original_IdSede) AND ([IdServicio] = @Original_IdServicio) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)));
+SELECT ISNULL(Observaciones, '') AS ObservacionesEncabezadoVerificacion, IdAlistamiento, IdEmpresa, IdSede, IdServicio, Fecha FROM VerificacionAlistamiento WHERE (IdAlistamiento = @IdAlistamiento) AND (IdEmpresa = @IdEmpresa) AND (IdSede = @IdSede) AND (IdServicio = @IdServicio)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdAlistamiento" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdAlistamiento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdSede" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdServicio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdServicio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ObservacionesEncabezadoVerificacion" DataSetColumn="ObservacionesEncabezadoVerificacion" />
+              <Mapping SourceColumn="IdAlistamiento" DataSetColumn="IdAlistamiento" />
+              <Mapping SourceColumn="IdEmpresa" DataSetColumn="IdEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="IdServicio" DataSetColumn="IdServicio" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetAlistamiento" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetAlistamiento" msprop:Generator_UserDSName="DataSetAlistamiento">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AListamientoInfo" msprop:Generator_TableClassName="AListamientoInfoDataTable" msprop:Generator_TableVarName="tableAListamientoInfo" msprop:Generator_RowChangedName="AListamientoInfoRowChanged" msprop:Generator_TablePropName="AListamientoInfo" msprop:Generator_RowDeletingName="AListamientoInfoRowDeleting" msprop:Generator_RowChangingName="AListamientoInfoRowChanging" msprop:Generator_RowEvHandlerName="AListamientoInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="AListamientoInfoRowDeleted" msprop:Generator_RowClassName="AListamientoInfoRow" msprop:Generator_UserTableName="AListamientoInfo" msprop:Generator_RowEvArgName="AListamientoInfoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="IdEmpresa" msprop:Generator_ColumnVarNameInTable="columnIdEmpresa" msprop:Generator_ColumnPropNameInRow="IdEmpresa" msprop:Generator_ColumnPropNameInTable="IdEmpresaColumn" msprop:Generator_UserColumnName="IdEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="IdServicio" msprop:Generator_ColumnVarNameInTable="columnIdServicio" msprop:Generator_ColumnPropNameInRow="IdServicio" msprop:Generator_ColumnPropNameInTable="IdServicioColumn" msprop:Generator_UserColumnName="IdServicio" type="xs:int" />
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Servicio" msprop:Generator_ColumnVarNameInTable="columnServicio" msprop:Generator_ColumnPropNameInRow="Servicio" msprop:Generator_ColumnPropNameInTable="ServicioColumn" msprop:Generator_UserColumnName="Servicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCamara" msprop:Generator_ColumnVarNameInTable="columnIdCamara" msprop:Generator_ColumnPropNameInRow="IdCamara" msprop:Generator_ColumnPropNameInTable="IdCamaraColumn" msprop:Generator_UserColumnName="IdCamara" type="xs:int" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:int" minOccurs="0" />
+              <xs:element name="NombreEmpleado" msprop:Generator_ColumnVarNameInTable="columnNombreEmpleado" msprop:Generator_ColumnPropNameInRow="NombreEmpleado" msprop:Generator_ColumnPropNameInTable="NombreEmpleadoColumn" msprop:Generator_UserColumnName="NombreEmpleado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sede" msprop:Generator_ColumnVarNameInTable="columnSede" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_UserColumnName="Sede" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" msprop:Generator_UserColumnName="Observaciones" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubBodega" msprop:Generator_ColumnVarNameInTable="columnSubBodega" msprop:Generator_ColumnPropNameInRow="SubBodega" msprop:Generator_ColumnPropNameInTable="SubBodegaColumn" msprop:Generator_UserColumnName="SubBodega">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AplicacionAlistamiento" msprop:Generator_ColumnVarNameInTable="columnAplicacionAlistamiento" msprop:Generator_ColumnPropNameInRow="AplicacionAlistamiento" msprop:Generator_ColumnPropNameInTable="AplicacionAlistamientoColumn" msprop:Generator_UserColumnName="AplicacionAlistamiento" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AlistamientoDetalleInfo" msprop:Generator_TableClassName="AlistamientoDetalleInfoDataTable" msprop:Generator_TableVarName="tableAlistamientoDetalleInfo" msprop:Generator_RowChangedName="AlistamientoDetalleInfoRowChanged" msprop:Generator_TablePropName="AlistamientoDetalleInfo" msprop:Generator_RowDeletingName="AlistamientoDetalleInfoRowDeleting" msprop:Generator_RowChangingName="AlistamientoDetalleInfoRowChanging" msprop:Generator_RowEvHandlerName="AlistamientoDetalleInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="AlistamientoDetalleInfoRowDeleted" msprop:Generator_RowClassName="AlistamientoDetalleInfoRow" msprop:Generator_UserTableName="AlistamientoDetalleInfo" msprop:Generator_RowEvArgName="AlistamientoDetalleInfoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="IdEmpresa" msprop:Generator_ColumnVarNameInTable="columnIdEmpresa" msprop:Generator_ColumnPropNameInRow="IdEmpresa" msprop:Generator_ColumnPropNameInTable="IdEmpresaColumn" msprop:Generator_UserColumnName="IdEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="IdProducto" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" />
+              <xs:element name="IdServicio" msprop:Generator_ColumnVarNameInTable="columnIdServicio" msprop:Generator_ColumnPropNameInRow="IdServicio" msprop:Generator_ColumnPropNameInTable="IdServicioColumn" msprop:Generator_UserColumnName="IdServicio" type="xs:int" />
+              <xs:element name="CodEscrito" msprop:Generator_ColumnVarNameInTable="columnCodEscrito" msprop:Generator_ColumnPropNameInRow="CodEscrito" msprop:Generator_ColumnPropNameInTable="CodEscritoColumn" msprop:Generator_UserColumnName="CodEscrito" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pasillo" msprop:Generator_ColumnVarNameInTable="columnPasillo" msprop:Generator_ColumnPropNameInRow="Pasillo" msprop:Generator_ColumnPropNameInTable="PasilloColumn" msprop:Generator_UserColumnName="Pasillo" type="xs:int" minOccurs="0" />
+              <xs:element name="Nivel" msprop:Generator_ColumnVarNameInTable="columnNivel" msprop:Generator_ColumnPropNameInRow="Nivel" msprop:Generator_ColumnPropNameInTable="NivelColumn" msprop:Generator_UserColumnName="Nivel" type="xs:int" minOccurs="0" />
+              <xs:element name="Posicion" msprop:Generator_ColumnVarNameInTable="columnPosicion" msprop:Generator_ColumnPropNameInRow="Posicion" msprop:Generator_ColumnPropNameInTable="PosicionColumn" msprop:Generator_UserColumnName="Posicion" type="xs:int" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lote" msprop:Generator_ColumnVarNameInTable="columnLote" msprop:Generator_ColumnPropNameInRow="Lote" msprop:Generator_ColumnPropNameInTable="LoteColumn" msprop:Generator_UserColumnName="Lote" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidades" msprop:Generator_ColumnVarNameInTable="columnCantidades" msprop:Generator_ColumnPropNameInRow="Cantidades" msprop:Generator_ColumnPropNameInTable="CantidadesColumn" msprop:Generator_UserColumnName="Cantidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Unidades" msprop:Generator_ColumnVarNameInTable="columnUnidades" msprop:Generator_ColumnPropNameInRow="Unidades" msprop:Generator_ColumnPropNameInTable="UnidadesColumn" msprop:Generator_UserColumnName="Unidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Kilos" msprop:Generator_ColumnVarNameInTable="columnKilos" msprop:Generator_ColumnPropNameInRow="Kilos" msprop:Generator_ColumnPropNameInTable="KilosColumn" msprop:Generator_UserColumnName="Kilos" type="xs:double" minOccurs="0" />
+              <xs:element name="Observacion" msprop:Generator_ColumnVarNameInTable="columnObservacion" msprop:Generator_ColumnPropNameInRow="Observacion" msprop:Generator_ColumnPropNameInTable="ObservacionColumn" msprop:Generator_UserColumnName="Observacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PocionLarga" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPocionLarga" msprop:Generator_ColumnPropNameInRow="PocionLarga" msprop:Generator_ColumnPropNameInTable="PocionLargaColumn" msprop:Generator_UserColumnName="PocionLarga" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="94" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdGrupo" msprop:Generator_ColumnVarNameInTable="columnIdGrupo" msprop:Generator_ColumnPropNameInRow="IdGrupo" msprop:Generator_ColumnPropNameInTable="IdGrupoColumn" msprop:Generator_UserColumnName="IdGrupo" type="xs:int" minOccurs="0" />
+              <xs:element name="NombreProductoGrupo" msprop:Generator_ColumnVarNameInTable="columnNombreProductoGrupo" msprop:Generator_ColumnPropNameInRow="NombreProductoGrupo" msprop:Generator_ColumnPropNameInTable="NombreProductoGrupoColumn" msprop:Generator_UserColumnName="NombreProductoGrupo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCamara" msprop:Generator_ColumnVarNameInTable="columnIdCamara" msprop:Generator_ColumnPropNameInRow="IdCamara" msprop:Generator_ColumnPropNameInTable="IdCamaraColumn" msprop:Generator_UserColumnName="IdCamara" type="xs:int" minOccurs="0" />
+              <xs:element name="EmbalajeE" msprop:Generator_ColumnVarNameInTable="columnEmbalajeE" msprop:Generator_ColumnPropNameInRow="EmbalajeE" msprop:Generator_ColumnPropNameInTable="EmbalajeEColumn" msprop:Generator_UserColumnName="EmbalajeE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdEmbalaje" msprop:Generator_ColumnVarNameInTable="columnIdEmbalaje" msprop:Generator_ColumnPropNameInRow="IdEmbalaje" msprop:Generator_ColumnPropNameInTable="IdEmbalajeColumn" msprop:Generator_UserColumnName="IdEmbalaje" type="xs:int" />
+              <xs:element name="IdObservacion" msprop:Generator_ColumnVarNameInTable="columnIdObservacion" msprop:Generator_ColumnPropNameInRow="IdObservacion" msprop:Generator_ColumnPropNameInTable="IdObservacionColumn" msprop:Generator_UserColumnName="IdObservacion" type="xs:int" minOccurs="0" />
+              <xs:element name="UnidxEmb" msprop:Generator_ColumnVarNameInTable="columnUnidxEmb" msprop:Generator_ColumnPropNameInRow="UnidxEmb" msprop:Generator_ColumnPropNameInTable="UnidxEmbColumn" msprop:Generator_UserColumnName="UnidxEmb" type="xs:double" minOccurs="0" />
+              <xs:element name="FechaVencimiento" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AlistamientoDestino" msprop:Generator_TableClassName="AlistamientoDestinoDataTable" msprop:Generator_TableVarName="tableAlistamientoDestino" msprop:Generator_RowChangedName="AlistamientoDestinoRowChanged" msprop:Generator_TablePropName="AlistamientoDestino" msprop:Generator_RowDeletingName="AlistamientoDestinoRowDeleting" msprop:Generator_RowChangingName="AlistamientoDestinoRowChanging" msprop:Generator_RowEvHandlerName="AlistamientoDestinoRowChangeEventHandler" msprop:Generator_RowDeletedName="AlistamientoDestinoRowDeleted" msprop:Generator_RowClassName="AlistamientoDestinoRow" msprop:Generator_UserTableName="AlistamientoDestino" msprop:Generator_RowEvArgName="AlistamientoDestinoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="IdEmpresa" msprop:Generator_ColumnVarNameInTable="columnIdEmpresa" msprop:Generator_ColumnPropNameInRow="IdEmpresa" msprop:Generator_ColumnPropNameInTable="IdEmpresaColumn" msprop:Generator_UserColumnName="IdEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="IdProducto" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" />
+              <xs:element name="IdServicio" msprop:Generator_ColumnVarNameInTable="columnIdServicio" msprop:Generator_ColumnPropNameInRow="IdServicio" msprop:Generator_ColumnPropNameInTable="IdServicioColumn" msprop:Generator_UserColumnName="IdServicio" type="xs:int" />
+              <xs:element name="CodEscrito" msprop:Generator_ColumnVarNameInTable="columnCodEscrito" msprop:Generator_ColumnPropNameInRow="CodEscrito" msprop:Generator_ColumnPropNameInTable="CodEscritoColumn" msprop:Generator_UserColumnName="CodEscrito" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pasillo" msprop:Generator_ColumnVarNameInTable="columnPasillo" msprop:Generator_ColumnPropNameInRow="Pasillo" msprop:Generator_ColumnPropNameInTable="PasilloColumn" msprop:Generator_UserColumnName="Pasillo" type="xs:int" minOccurs="0" />
+              <xs:element name="Nivel" msprop:Generator_ColumnVarNameInTable="columnNivel" msprop:Generator_ColumnPropNameInRow="Nivel" msprop:Generator_ColumnPropNameInTable="NivelColumn" msprop:Generator_UserColumnName="Nivel" type="xs:int" minOccurs="0" />
+              <xs:element name="Posicion" msprop:Generator_ColumnVarNameInTable="columnPosicion" msprop:Generator_ColumnPropNameInRow="Posicion" msprop:Generator_ColumnPropNameInTable="PosicionColumn" msprop:Generator_UserColumnName="Posicion" type="xs:int" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lote" msprop:Generator_ColumnVarNameInTable="columnLote" msprop:Generator_ColumnPropNameInRow="Lote" msprop:Generator_ColumnPropNameInTable="LoteColumn" msprop:Generator_UserColumnName="Lote" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidades" msprop:Generator_ColumnVarNameInTable="columnCantidades" msprop:Generator_ColumnPropNameInRow="Cantidades" msprop:Generator_ColumnPropNameInTable="CantidadesColumn" msprop:Generator_UserColumnName="Cantidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Unidades" msprop:Generator_ColumnVarNameInTable="columnUnidades" msprop:Generator_ColumnPropNameInRow="Unidades" msprop:Generator_ColumnPropNameInTable="UnidadesColumn" msprop:Generator_UserColumnName="Unidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Kilos" msprop:Generator_ColumnVarNameInTable="columnKilos" msprop:Generator_ColumnPropNameInRow="Kilos" msprop:Generator_ColumnPropNameInTable="KilosColumn" msprop:Generator_UserColumnName="Kilos" type="xs:double" minOccurs="0" />
+              <xs:element name="PocionLarga" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPocionLarga" msprop:Generator_ColumnPropNameInRow="PocionLarga" msprop:Generator_ColumnPropNameInTable="PocionLargaColumn" msprop:Generator_UserColumnName="PocionLarga" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="94" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdGrupo" msprop:Generator_ColumnVarNameInTable="columnIdGrupo" msprop:Generator_ColumnPropNameInRow="IdGrupo" msprop:Generator_ColumnPropNameInTable="IdGrupoColumn" msprop:Generator_UserColumnName="IdGrupo" type="xs:int" minOccurs="0" />
+              <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AlistamientoDestino2" msprop:Generator_TableClassName="AlistamientoDestino2DataTable" msprop:Generator_TableVarName="tableAlistamientoDestino2" msprop:Generator_TablePropName="AlistamientoDestino2" msprop:Generator_RowDeletingName="AlistamientoDestino2RowDeleting" msprop:Generator_RowChangingName="AlistamientoDestino2RowChanging" msprop:Generator_RowEvHandlerName="AlistamientoDestino2RowChangeEventHandler" msprop:Generator_RowDeletedName="AlistamientoDestino2RowDeleted" msprop:Generator_UserTableName="AlistamientoDestino2" msprop:Generator_RowChangedName="AlistamientoDestino2RowChanged" msprop:Generator_RowEvArgName="AlistamientoDestino2RowChangeEvent" msprop:Generator_RowClassName="AlistamientoDestino2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodEscrito" msprop:Generator_ColumnVarNameInTable="columnCodEscrito" msprop:Generator_ColumnPropNameInRow="CodEscrito" msprop:Generator_ColumnPropNameInTable="CodEscritoColumn" msprop:Generator_UserColumnName="CodEscrito" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InventarioAlistamiento" msprop:Generator_TableClassName="InventarioAlistamientoDataTable" msprop:Generator_TableVarName="tableInventarioAlistamiento" msprop:Generator_RowChangedName="InventarioAlistamientoRowChanged" msprop:Generator_TablePropName="InventarioAlistamiento" msprop:Generator_RowDeletingName="InventarioAlistamientoRowDeleting" msprop:Generator_RowChangingName="InventarioAlistamientoRowChanging" msprop:Generator_RowEvHandlerName="InventarioAlistamientoRowChangeEventHandler" msprop:Generator_RowDeletedName="InventarioAlistamientoRowDeleted" msprop:Generator_RowClassName="InventarioAlistamientoRow" msprop:Generator_UserTableName="InventarioAlistamiento" msprop:Generator_RowEvArgName="InventarioAlistamientoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCamara" msprop:Generator_ColumnVarNameInTable="columnIdCamara" msprop:Generator_ColumnPropNameInRow="IdCamara" msprop:Generator_ColumnPropNameInTable="IdCamaraColumn" msprop:Generator_UserColumnName="IdCamara" type="xs:int" minOccurs="0" />
+              <xs:element name="Pasillo" msprop:Generator_ColumnVarNameInTable="columnPasillo" msprop:Generator_ColumnPropNameInRow="Pasillo" msprop:Generator_ColumnPropNameInTable="PasilloColumn" msprop:Generator_UserColumnName="Pasillo" type="xs:int" minOccurs="0" />
+              <xs:element name="Nivel" msprop:Generator_ColumnVarNameInTable="columnNivel" msprop:Generator_ColumnPropNameInRow="Nivel" msprop:Generator_ColumnPropNameInTable="NivelColumn" msprop:Generator_UserColumnName="Nivel" type="xs:int" minOccurs="0" />
+              <xs:element name="Posicion" msprop:Generator_ColumnVarNameInTable="columnPosicion" msprop:Generator_ColumnPropNameInRow="Posicion" msprop:Generator_ColumnPropNameInTable="PosicionColumn" msprop:Generator_UserColumnName="Posicion" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CodEscrito" msprop:Generator_ColumnVarNameInTable="columnCodEscrito" msprop:Generator_ColumnPropNameInRow="CodEscrito" msprop:Generator_ColumnPropNameInTable="CodEscritoColumn" msprop:Generator_UserColumnName="CodEscrito" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidades" msprop:Generator_ColumnVarNameInTable="columnCantidades" msprop:Generator_ColumnPropNameInRow="Cantidades" msprop:Generator_ColumnPropNameInTable="CantidadesColumn" msprop:Generator_UserColumnName="Cantidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Unidades" msprop:Generator_ColumnVarNameInTable="columnUnidades" msprop:Generator_ColumnPropNameInRow="Unidades" msprop:Generator_ColumnPropNameInTable="UnidadesColumn" msprop:Generator_UserColumnName="Unidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Kilos" msprop:Generator_ColumnVarNameInTable="columnKilos" msprop:Generator_ColumnPropNameInRow="Kilos" msprop:Generator_ColumnPropNameInTable="KilosColumn" msprop:Generator_UserColumnName="Kilos" type="xs:double" minOccurs="0" />
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:int" minOccurs="0" />
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTableAlistamientoVencido" msprop:Generator_TableClassName="DataTableAlistamientoVencidoDataTable" msprop:Generator_TableVarName="tableDataTableAlistamientoVencido" msprop:Generator_RowChangedName="DataTableAlistamientoVencidoRowChanged" msprop:Generator_TablePropName="DataTableAlistamientoVencido" msprop:Generator_RowDeletingName="DataTableAlistamientoVencidoRowDeleting" msprop:Generator_RowChangingName="DataTableAlistamientoVencidoRowChanging" msprop:Generator_RowEvHandlerName="DataTableAlistamientoVencidoRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableAlistamientoVencidoRowDeleted" msprop:Generator_RowClassName="DataTableAlistamientoVencidoRow" msprop:Generator_UserTableName="DataTableAlistamientoVencido" msprop:Generator_RowEvArgName="DataTableAlistamientoVencidoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Servicio" msprop:Generator_ColumnVarNameInTable="columnServicio" msprop:Generator_ColumnPropNameInRow="Servicio" msprop:Generator_ColumnPropNameInTable="ServicioColumn" msprop:Generator_UserColumnName="Servicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sede" msprop:Generator_ColumnVarNameInTable="columnSede" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_UserColumnName="Sede" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AlistamientosActivos" msprop:Generator_TableClassName="AlistamientosActivosDataTable" msprop:Generator_TableVarName="tableAlistamientosActivos" msprop:Generator_TablePropName="AlistamientosActivos" msprop:Generator_RowDeletingName="AlistamientosActivosRowDeleting" msprop:Generator_RowChangingName="AlistamientosActivosRowChanging" msprop:Generator_RowEvHandlerName="AlistamientosActivosRowChangeEventHandler" msprop:Generator_RowDeletedName="AlistamientosActivosRowDeleted" msprop:Generator_UserTableName="AlistamientosActivos" msprop:Generator_RowChangedName="AlistamientosActivosRowChanged" msprop:Generator_RowEvArgName="AlistamientosActivosRowChangeEvent" msprop:Generator_RowClassName="AlistamientosActivosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="IdServicio" msprop:Generator_ColumnVarNameInTable="columnIdServicio" msprop:Generator_ColumnPropNameInRow="IdServicio" msprop:Generator_ColumnPropNameInTable="IdServicioColumn" msprop:Generator_UserColumnName="IdServicio" type="xs:int" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:int" minOccurs="0" />
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Servicio" msprop:Generator_ColumnVarNameInTable="columnServicio" msprop:Generator_ColumnPropNameInRow="Servicio" msprop:Generator_ColumnPropNameInTable="ServicioColumn" msprop:Generator_UserColumnName="Servicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sede" msprop:Generator_ColumnVarNameInTable="columnSede" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_UserColumnName="Sede" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidades" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidades" msprop:Generator_ColumnPropNameInRow="Cantidades" msprop:Generator_ColumnPropNameInTable="CantidadesColumn" msprop:Generator_UserColumnName="Cantidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Unidades" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUnidades" msprop:Generator_ColumnPropNameInRow="Unidades" msprop:Generator_ColumnPropNameInTable="UnidadesColumn" msprop:Generator_UserColumnName="Unidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Kilos" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnKilos" msprop:Generator_ColumnPropNameInRow="Kilos" msprop:Generator_ColumnPropNameInTable="KilosColumn" msprop:Generator_UserColumnName="Kilos" type="xs:double" minOccurs="0" />
+              <xs:element name="PocionLarga" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPocionLarga" msprop:Generator_ColumnPropNameInRow="PocionLarga" msprop:Generator_ColumnPropNameInTable="PocionLargaColumn" msprop:Generator_UserColumnName="PocionLarga" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="129" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodEscrito" msprop:Generator_ColumnVarNameInTable="columnCodEscrito" msprop:Generator_ColumnPropNameInRow="CodEscrito" msprop:Generator_ColumnPropNameInTable="CodEscritoColumn" msprop:Generator_UserColumnName="CodEscrito" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lote" msprop:Generator_ColumnVarNameInTable="columnLote" msprop:Generator_ColumnPropNameInRow="Lote" msprop:Generator_ColumnPropNameInTable="LoteColumn" msprop:Generator_UserColumnName="Lote" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observacion" msprop:Generator_ColumnVarNameInTable="columnObservacion" msprop:Generator_ColumnPropNameInRow="Observacion" msprop:Generator_ColumnPropNameInTable="ObservacionColumn" msprop:Generator_UserColumnName="Observacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdTercero" msprop:Generator_ColumnVarNameInTable="columnIdTercero" msprop:Generator_ColumnPropNameInRow="IdTercero" msprop:Generator_ColumnPropNameInTable="IdTerceroColumn" msprop:Generator_UserColumnName="IdTercero" type="xs:int" />
+              <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tarea" msprop:Generator_TableClassName="TareaDataTable" msprop:Generator_TableVarName="tableTarea" msprop:Generator_TablePropName="Tarea" msprop:Generator_RowDeletingName="TareaRowDeleting" msprop:Generator_RowChangingName="TareaRowChanging" msprop:Generator_RowEvHandlerName="TareaRowChangeEventHandler" msprop:Generator_RowDeletedName="TareaRowDeleted" msprop:Generator_UserTableName="Tarea" msprop:Generator_RowChangedName="TareaRowChanged" msprop:Generator_RowEvArgName="TareaRowChangeEvent" msprop:Generator_RowClassName="TareaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdEmpresa" msprop:Generator_ColumnVarNameInTable="columnIdEmpresa" msprop:Generator_ColumnPropNameInRow="IdEmpresa" msprop:Generator_ColumnPropNameInTable="IdEmpresaColumn" msprop:Generator_UserColumnName="IdEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="IdTarea" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdTarea" msprop:Generator_ColumnPropNameInRow="IdTarea" msprop:Generator_ColumnPropNameInTable="IdTareaColumn" msprop:Generator_UserColumnName="IdTarea" type="xs:int" />
+              <xs:element name="TipoTarea" msprop:Generator_ColumnVarNameInTable="columnTipoTarea" msprop:Generator_ColumnPropNameInRow="TipoTarea" msprop:Generator_ColumnPropNameInTable="TipoTareaColumn" msprop:Generator_UserColumnName="TipoTarea" type="xs:int" minOccurs="0" />
+              <xs:element name="IdCargo" msprop:Generator_ColumnVarNameInTable="columnIdCargo" msprop:Generator_ColumnPropNameInRow="IdCargo" msprop:Generator_ColumnPropNameInTable="IdCargoColumn" msprop:Generator_UserColumnName="IdCargo" type="xs:int" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="consultaAlistamientoTipoAplicacion" msprop:Generator_TableClassName="consultaAlistamientoTipoAplicacionDataTable" msprop:Generator_TableVarName="tableconsultaAlistamientoTipoAplicacion" msprop:Generator_RowChangedName="consultaAlistamientoTipoAplicacionRowChanged" msprop:Generator_TablePropName="consultaAlistamientoTipoAplicacion" msprop:Generator_RowDeletingName="consultaAlistamientoTipoAplicacionRowDeleting" msprop:Generator_RowChangingName="consultaAlistamientoTipoAplicacionRowChanging" msprop:Generator_RowEvHandlerName="consultaAlistamientoTipoAplicacionRowChangeEventHandler" msprop:Generator_RowDeletedName="consultaAlistamientoTipoAplicacionRowDeleted" msprop:Generator_RowClassName="consultaAlistamientoTipoAplicacionRow" msprop:Generator_UserTableName="consultaAlistamientoTipoAplicacion" msprop:Generator_RowEvArgName="consultaAlistamientoTipoAplicacionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="IdEmpresa" msprop:Generator_ColumnVarNameInTable="columnIdEmpresa" msprop:Generator_ColumnPropNameInRow="IdEmpresa" msprop:Generator_ColumnPropNameInTable="IdEmpresaColumn" msprop:Generator_UserColumnName="IdEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="IdServicio" msprop:Generator_ColumnVarNameInTable="columnIdServicio" msprop:Generator_ColumnPropNameInRow="IdServicio" msprop:Generator_ColumnPropNameInTable="IdServicioColumn" msprop:Generator_UserColumnName="IdServicio" type="xs:int" />
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Servicio" msprop:Generator_ColumnVarNameInTable="columnServicio" msprop:Generator_ColumnPropNameInRow="Servicio" msprop:Generator_ColumnPropNameInTable="ServicioColumn" msprop:Generator_UserColumnName="Servicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCamara" msprop:Generator_ColumnVarNameInTable="columnIdCamara" msprop:Generator_ColumnPropNameInRow="IdCamara" msprop:Generator_ColumnPropNameInTable="IdCamaraColumn" msprop:Generator_UserColumnName="IdCamara" type="xs:int" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:int" minOccurs="0" />
+              <xs:element name="NombreEmpleado" msprop:Generator_ColumnVarNameInTable="columnNombreEmpleado" msprop:Generator_ColumnPropNameInRow="NombreEmpleado" msprop:Generator_ColumnPropNameInTable="NombreEmpleadoColumn" msprop:Generator_UserColumnName="NombreEmpleado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sede" msprop:Generator_ColumnVarNameInTable="columnSede" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_UserColumnName="Sede" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" msprop:Generator_UserColumnName="Observaciones" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubBodega" msprop:Generator_ColumnVarNameInTable="columnSubBodega" msprop:Generator_ColumnPropNameInRow="SubBodega" msprop:Generator_ColumnPropNameInTable="SubBodegaColumn" msprop:Generator_UserColumnName="SubBodega">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AplicacionAlistamiento" msprop:Generator_ColumnVarNameInTable="columnAplicacionAlistamiento" msprop:Generator_ColumnPropNameInRow="AplicacionAlistamiento" msprop:Generator_ColumnPropNameInTable="AplicacionAlistamientoColumn" msprop:Generator_UserColumnName="AplicacionAlistamiento" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VerificacionAlistamientoDetalle" msprop:Generator_TableClassName="VerificacionAlistamientoDetalleDataTable" msprop:Generator_TableVarName="tableVerificacionAlistamientoDetalle" msprop:Generator_TablePropName="VerificacionAlistamientoDetalle" msprop:Generator_RowDeletingName="VerificacionAlistamientoDetalleRowDeleting" msprop:Generator_RowChangingName="VerificacionAlistamientoDetalleRowChanging" msprop:Generator_RowEvHandlerName="VerificacionAlistamientoDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="VerificacionAlistamientoDetalleRowDeleted" msprop:Generator_UserTableName="VerificacionAlistamientoDetalle" msprop:Generator_RowChangedName="VerificacionAlistamientoDetalleRowChanged" msprop:Generator_RowEvArgName="VerificacionAlistamientoDetalleRowChangeEvent" msprop:Generator_RowClassName="VerificacionAlistamientoDetalleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="IdEmpresa" msprop:Generator_ColumnVarNameInTable="columnIdEmpresa" msprop:Generator_ColumnPropNameInRow="IdEmpresa" msprop:Generator_ColumnPropNameInTable="IdEmpresaColumn" msprop:Generator_UserColumnName="IdEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="IdProducto" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" />
+              <xs:element name="IdServicio" msprop:Generator_ColumnVarNameInTable="columnIdServicio" msprop:Generator_ColumnPropNameInRow="IdServicio" msprop:Generator_ColumnPropNameInTable="IdServicioColumn" msprop:Generator_UserColumnName="IdServicio" type="xs:int" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidades" msprop:Generator_ColumnVarNameInTable="columnCantidades" msprop:Generator_ColumnPropNameInRow="Cantidades" msprop:Generator_ColumnPropNameInTable="CantidadesColumn" msprop:Generator_UserColumnName="Cantidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Unidades" msprop:Generator_ColumnVarNameInTable="columnUnidades" msprop:Generator_ColumnPropNameInRow="Unidades" msprop:Generator_ColumnPropNameInTable="UnidadesColumn" msprop:Generator_UserColumnName="Unidades" type="xs:double" minOccurs="0" />
+              <xs:element name="Kilos" msprop:Generator_ColumnVarNameInTable="columnKilos" msprop:Generator_ColumnPropNameInRow="Kilos" msprop:Generator_ColumnPropNameInTable="KilosColumn" msprop:Generator_UserColumnName="Kilos" type="xs:double" minOccurs="0" />
+              <xs:element name="Observacion" msprop:Generator_ColumnVarNameInTable="columnObservacion" msprop:Generator_ColumnPropNameInRow="Observacion" msprop:Generator_ColumnPropNameInTable="ObservacionColumn" msprop:Generator_UserColumnName="Observacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PocionLarga" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPocionLarga" msprop:Generator_ColumnPropNameInRow="PocionLarga" msprop:Generator_ColumnPropNameInTable="PocionLargaColumn" msprop:Generator_UserColumnName="PocionLarga" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="129" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdGrupo" msprop:Generator_ColumnVarNameInTable="columnIdGrupo" msprop:Generator_ColumnPropNameInRow="IdGrupo" msprop:Generator_ColumnPropNameInTable="IdGrupoColumn" msprop:Generator_UserColumnName="IdGrupo" type="xs:int" minOccurs="0" />
+              <xs:element name="NombreProductoGrupo" msprop:Generator_ColumnVarNameInTable="columnNombreProductoGrupo" msprop:Generator_ColumnPropNameInRow="NombreProductoGrupo" msprop:Generator_ColumnPropNameInTable="NombreProductoGrupoColumn" msprop:Generator_UserColumnName="NombreProductoGrupo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmbalajeE" msprop:Generator_ColumnVarNameInTable="columnEmbalajeE" msprop:Generator_ColumnPropNameInRow="EmbalajeE" msprop:Generator_ColumnPropNameInTable="EmbalajeEColumn" msprop:Generator_UserColumnName="EmbalajeE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdEmbalaje" msprop:Generator_ColumnVarNameInTable="columnIdEmbalaje" msprop:Generator_ColumnPropNameInRow="IdEmbalaje" msprop:Generator_ColumnPropNameInTable="IdEmbalajeColumn" msprop:Generator_UserColumnName="IdEmbalaje" type="xs:int" />
+              <xs:element name="IdObservacion" msprop:Generator_ColumnVarNameInTable="columnIdObservacion" msprop:Generator_ColumnPropNameInRow="IdObservacion" msprop:Generator_ColumnPropNameInTable="IdObservacionColumn" msprop:Generator_UserColumnName="IdObservacion" type="xs:int" minOccurs="0" />
+              <xs:element name="CodEscrito" msprop:Generator_ColumnVarNameInTable="columnCodEscrito" msprop:Generator_ColumnPropNameInRow="CodEscrito" msprop:Generator_ColumnPropNameInTable="CodEscritoColumn" msprop:Generator_UserColumnName="CodEscrito" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lote" msprop:Generator_ColumnVarNameInTable="columnLote" msprop:Generator_ColumnPropNameInRow="Lote" msprop:Generator_ColumnPropNameInTable="LoteColumn" msprop:Generator_UserColumnName="Lote" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaVencimiento" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Pasillo" msprop:Generator_ColumnVarNameInTable="columnPasillo" msprop:Generator_ColumnPropNameInRow="Pasillo" msprop:Generator_ColumnPropNameInTable="PasilloColumn" msprop:Generator_UserColumnName="Pasillo" type="xs:int" minOccurs="0" />
+              <xs:element name="Nivel" msprop:Generator_ColumnVarNameInTable="columnNivel" msprop:Generator_ColumnPropNameInRow="Nivel" msprop:Generator_ColumnPropNameInTable="NivelColumn" msprop:Generator_UserColumnName="Nivel" type="xs:int" minOccurs="0" />
+              <xs:element name="Posicion" msprop:Generator_ColumnVarNameInTable="columnPosicion" msprop:Generator_ColumnPropNameInRow="Posicion" msprop:Generator_ColumnPropNameInTable="PosicionColumn" msprop:Generator_UserColumnName="Posicion" type="xs:int" minOccurs="0" />
+              <xs:element name="IdCamara" msprop:Generator_ColumnVarNameInTable="columnIdCamara" msprop:Generator_ColumnPropNameInRow="IdCamara" msprop:Generator_ColumnPropNameInTable="IdCamaraColumn" msprop:Generator_UserColumnName="IdCamara" type="xs:int" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" msprop:Generator_UserColumnName="Observaciones" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="600" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaAprobacion" msprop:Generator_ColumnVarNameInTable="columnFechaAprobacion" msprop:Generator_ColumnPropNameInRow="FechaAprobacion" msprop:Generator_ColumnPropNameInTable="FechaAprobacionColumn" msprop:Generator_UserColumnName="FechaAprobacion" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VerificacionAlistamiento" msprop:Generator_TableClassName="VerificacionAlistamientoDataTable" msprop:Generator_TableVarName="tableVerificacionAlistamiento" msprop:Generator_RowChangedName="VerificacionAlistamientoRowChanged" msprop:Generator_TablePropName="VerificacionAlistamiento" msprop:Generator_RowDeletingName="VerificacionAlistamientoRowDeleting" msprop:Generator_RowChangingName="VerificacionAlistamientoRowChanging" msprop:Generator_RowEvHandlerName="VerificacionAlistamientoRowChangeEventHandler" msprop:Generator_RowDeletedName="VerificacionAlistamientoRowDeleted" msprop:Generator_RowClassName="VerificacionAlistamientoRow" msprop:Generator_UserTableName="VerificacionAlistamiento" msprop:Generator_RowEvArgName="VerificacionAlistamientoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ObservacionesEncabezadoVerificacion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnObservacionesEncabezadoVerificacion" msprop:Generator_ColumnPropNameInRow="ObservacionesEncabezadoVerificacion" msprop:Generator_ColumnPropNameInTable="ObservacionesEncabezadoVerificacionColumn" msprop:Generator_UserColumnName="ObservacionesEncabezadoVerificacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="600" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdAlistamiento" msprop:Generator_ColumnVarNameInTable="columnIdAlistamiento" msprop:Generator_ColumnPropNameInRow="IdAlistamiento" msprop:Generator_ColumnPropNameInTable="IdAlistamientoColumn" msprop:Generator_UserColumnName="IdAlistamiento" type="xs:int" />
+              <xs:element name="IdEmpresa" msprop:Generator_ColumnVarNameInTable="columnIdEmpresa" msprop:Generator_ColumnPropNameInRow="IdEmpresa" msprop:Generator_ColumnPropNameInTable="IdEmpresaColumn" msprop:Generator_UserColumnName="IdEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="IdServicio" msprop:Generator_ColumnVarNameInTable="columnIdServicio" msprop:Generator_ColumnPropNameInRow="IdServicio" msprop:Generator_ColumnPropNameInTable="IdServicioColumn" msprop:Generator_UserColumnName="IdServicio" type="xs:int" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AListamientoInfo" />
+      <xs:field xpath="mstns:IdAlistamiento" />
+      <xs:field xpath="mstns:IdEmpresa" />
+      <xs:field xpath="mstns:IdSede" />
+      <xs:field xpath="mstns:IdServicio" />
+    </xs:unique>
+    <xs:unique name="Tarea_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tarea" />
+      <xs:field xpath="mstns:IdEmpresa" />
+      <xs:field xpath="mstns:IdSede" />
+      <xs:field xpath="mstns:IdTarea" />
+    </xs:unique>
+    <xs:unique name="consultaAlistamientoTipoAplicacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:consultaAlistamientoTipoAplicacion" />
+      <xs:field xpath="mstns:IdAlistamiento" />
+      <xs:field xpath="mstns:IdEmpresa" />
+      <xs:field xpath="mstns:IdSede" />
+      <xs:field xpath="mstns:IdServicio" />
+    </xs:unique>
+    <xs:unique name="VerificacionAlistamiento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VerificacionAlistamiento" />
+      <xs:field xpath="mstns:IdAlistamiento" />
+      <xs:field xpath="mstns:IdEmpresa" />
+      <xs:field xpath="mstns:IdSede" />
+      <xs:field xpath="mstns:IdServicio" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

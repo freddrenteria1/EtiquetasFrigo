@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetRptPesajeEmpaque" targetNamespace="http://tempuri.org/DataSetRptPesajeEmpaque.xsd" xmlns:mstns="http://tempuri.org/DataSetRptPesajeEmpaque.xsd" xmlns="http://tempuri.org/DataSetRptPesajeEmpaque.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IglusoftConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IglusoftConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reportes.Properties.Settings.GlobalReference.Default.IglusoftConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PesajesEmpaqueTableAdapter" GeneratorDataComponentClassName="PesajesEmpaqueTableAdapter" Name="PesajesEmpaque" UserDataComponentName="PesajesEmpaqueTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IglusoftConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataPesajeEmpaque" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetDataPesajeEmpaque" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataPesajeEmpaque" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EntradasSalidasPesajes.NoDocumento, EntradasSalidasItems.IdItem, EntradasSalidasPesajes.LlaveINT, entradasSalidas.IdUsuario, EntradasSalidasPesajes.Fecha, EntradasSalidasPesajes.IdEmpresa, 
+                         EntradasSalidasPesajes.IdSede, Empresa.Empresa, Sede.Sede, Productos.Descripcion, EntradasSalidasPesajes.PesoBruto, Usuario.UserName, EntradasSalidasItems.EntradaCantidades, entradasSalidas.IdProceso, 
+                         entradasSalidas.IdSubProceso, entradasSalidas.IdServicio, EntradasSalidasPesajes.Anulado, entradasSalidas.IdEstado, EntradasSalidasItems.IdEstado AS EstadoItem
+FROM            Sede INNER JOIN
+                         Empresa ON Sede.IdEmpresa = Empresa.IdEmpresa INNER JOIN
+                         entradasSalidas INNER JOIN
+                         EntradasSalidasPesajes ON entradasSalidas.IdEmpresa = EntradasSalidasPesajes.IdEmpresa AND entradasSalidas.IdSede = EntradasSalidasPesajes.IdSede AND 
+                         entradasSalidas.IdProceso = EntradasSalidasPesajes.IdProceso AND entradasSalidas.NoDocumento = EntradasSalidasPesajes.NoDocumento AND entradasSalidas.IdServicio = EntradasSalidasPesajes.IdServicio INNER JOIN
+                         EntradasSalidasItems ON EntradasSalidasPesajes.IdEmpresa = EntradasSalidasItems.IdEmpresa AND EntradasSalidasPesajes.IdSede = EntradasSalidasItems.IdSede AND 
+                         EntradasSalidasPesajes.IdProceso = EntradasSalidasItems.IdProceso AND EntradasSalidasPesajes.NoDocumento = EntradasSalidasItems.NoDocumento AND EntradasSalidasPesajes.IdItem = EntradasSalidasItems.IdItem AND
+                          EntradasSalidasPesajes.IdServicio = EntradasSalidasItems.IdServicio ON Empresa.IdEmpresa = EntradasSalidasPesajes.IdEmpresa AND Sede.IdSede = EntradasSalidasPesajes.IdSede AND 
+                         Sede.IdEmpresa = EntradasSalidasPesajes.IdEmpresa AND Sede.IdSede = EntradasSalidasItems.IdSede AND Sede.IdEmpresa = EntradasSalidasItems.IdEmpresa AND 
+                         Empresa.IdEmpresa = EntradasSalidasItems.IdEmpresa AND Sede.IdSede = entradasSalidas.IdSede AND Sede.IdEmpresa = entradasSalidas.IdEmpresa AND Empresa.IdEmpresa = entradasSalidas.IdEmpresa INNER JOIN
+                         Productos ON Empresa.IdEmpresa = Productos.IdEmpresa AND EntradasSalidasItems.IdProducto = Productos.IdProducto INNER JOIN
+                         Usuario ON entradasSalidas.IdUsuario = Usuario.IdUsuario
+WHERE        (YEAR(DATEADD(HOUR, - 6, EntradasSalidasPesajes.Fecha)) = @Anio) AND (MONTH(DATEADD(HOUR, - 6, EntradasSalidasPesajes.Fecha)) = @Mes) AND (DAY(DATEADD(HOUR, - 6, EntradasSalidasPesajes.Fecha)) = @Dia) AND
+                          (EntradasSalidasPesajes.IdEmpresa = @IdEmpresa) AND (EntradasSalidasPesajes.IdSede = @IdSede) AND (entradasSalidas.IdProceso = 1) AND (entradasSalidas.IdSubProceso = 2) AND (entradasSalidas.IdServicio = 4) AND 
+                         (EntradasSalidasPesajes.Anulado = 0)
+ORDER BY EntradasSalidasPesajes.NoDocumento, EntradasSalidasItems.IdItem</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Anio" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Decimal" Direction="Input" ParameterName="@Anio" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Mes" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Decimal" Direction="Input" ParameterName="@Mes" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Dia" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Int32" Direction="Input" ParameterName="@Dia" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdEmpresa" ColumnName="IdEmpresa" DataSourceName="Iglusoft2.dbo.EntradasSalidasPesajes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdEmpresa" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdSede" ColumnName="IdSede" DataSourceName="Iglusoft2.dbo.EntradasSalidasPesajes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdSede" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdSede" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LlaveINT" DataSetColumn="LlaveINT" />
+              <Mapping SourceColumn="NoDocumento" DataSetColumn="NoDocumento" />
+              <Mapping SourceColumn="IdUsuario" DataSetColumn="IdUsuario" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="IdEmpresa" DataSetColumn="IdEmpresa" />
+              <Mapping SourceColumn="IdSede" DataSetColumn="IdSede" />
+              <Mapping SourceColumn="Empresa" DataSetColumn="Empresa" />
+              <Mapping SourceColumn="Sede" DataSetColumn="Sede" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="PesoBruto" DataSetColumn="PesoBruto" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="EntradaCantidades" DataSetColumn="EntradaCantidades" />
+              <Mapping SourceColumn="IdItem" DataSetColumn="IdItem" />
+              <Mapping SourceColumn="IdProceso" DataSetColumn="IdProceso" />
+              <Mapping SourceColumn="IdSubProceso" DataSetColumn="IdSubProceso" />
+              <Mapping SourceColumn="IdServicio" DataSetColumn="IdServicio" />
+              <Mapping SourceColumn="Anulado" DataSetColumn="Anulado" />
+              <Mapping SourceColumn="IdEstado" DataSetColumn="IdEstado" />
+              <Mapping SourceColumn="EstadoItem" DataSetColumn="EstadoItem" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetRptPesajeEmpaque" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetRptPesajeEmpaque" msprop:Generator_UserDSName="DataSetRptPesajeEmpaque">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PesajesEmpaque" msprop:Generator_TableClassName="PesajesEmpaqueDataTable" msprop:Generator_TableVarName="tablePesajesEmpaque" msprop:Generator_RowChangedName="PesajesEmpaqueRowChanged" msprop:Generator_TablePropName="PesajesEmpaque" msprop:Generator_RowDeletingName="PesajesEmpaqueRowDeleting" msprop:Generator_RowChangingName="PesajesEmpaqueRowChanging" msprop:Generator_RowEvHandlerName="PesajesEmpaqueRowChangeEventHandler" msprop:Generator_RowDeletedName="PesajesEmpaqueRowDeleted" msprop:Generator_RowClassName="PesajesEmpaqueRow" msprop:Generator_UserTableName="PesajesEmpaque" msprop:Generator_RowEvArgName="PesajesEmpaqueRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LlaveINT" msprop:Generator_ColumnVarNameInTable="columnLlaveINT" msprop:Generator_ColumnPropNameInRow="LlaveINT" msprop:Generator_ColumnPropNameInTable="LlaveINTColumn" msprop:Generator_UserColumnName="LlaveINT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NoDocumento" msprop:Generator_ColumnVarNameInTable="columnNoDocumento" msprop:Generator_ColumnPropNameInRow="NoDocumento" msprop:Generator_ColumnPropNameInTable="NoDocumentoColumn" msprop:Generator_UserColumnName="NoDocumento" type="xs:long" />
+              <xs:element name="IdUsuario" msprop:Generator_ColumnVarNameInTable="columnIdUsuario" msprop:Generator_ColumnPropNameInRow="IdUsuario" msprop:Generator_ColumnPropNameInTable="IdUsuarioColumn" msprop:Generator_UserColumnName="IdUsuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IdEmpresa" msprop:Generator_ColumnVarNameInTable="columnIdEmpresa" msprop:Generator_ColumnPropNameInRow="IdEmpresa" msprop:Generator_ColumnPropNameInTable="IdEmpresaColumn" msprop:Generator_UserColumnName="IdEmpresa" type="xs:int" />
+              <xs:element name="IdSede" msprop:Generator_ColumnVarNameInTable="columnIdSede" msprop:Generator_ColumnPropNameInRow="IdSede" msprop:Generator_ColumnPropNameInTable="IdSedeColumn" msprop:Generator_UserColumnName="IdSede" type="xs:int" />
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sede" msprop:Generator_ColumnVarNameInTable="columnSede" msprop:Generator_ColumnPropNameInRow="Sede" msprop:Generator_ColumnPropNameInTable="SedeColumn" msprop:Generator_UserColumnName="Sede" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PesoBruto" msprop:Generator_ColumnVarNameInTable="columnPesoBruto" msprop:Generator_ColumnPropNameInRow="PesoBruto" msprop:Generator_ColumnPropNameInTable="PesoBrutoColumn" msprop:Generator_UserColumnName="PesoBruto" type="xs:double" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EntradaCantidades" msprop:Generator_ColumnVarNameInTable="columnEntradaCantidades" msprop:Generator_ColumnPropNameInRow="EntradaCantidades" msprop:Generator_ColumnPropNameInTable="EntradaCantidadesColumn" msprop:Generator_UserColumnName="EntradaCantidades" type="xs:double" minOccurs="0" />
+              <xs:element name="IdItem" msprop:Generator_ColumnVarNameInTable="columnIdItem" msprop:Generator_ColumnPropNameInRow="IdItem" msprop:Generator_ColumnPropNameInTable="IdItemColumn" msprop:Generator_UserColumnName="IdItem" type="xs:int" />
+              <xs:element name="IdProceso" msprop:Generator_ColumnVarNameInTable="columnIdProceso" msprop:Generator_ColumnPropNameInRow="IdProceso" msprop:Generator_ColumnPropNameInTable="IdProcesoColumn" msprop:Generator_UserColumnName="IdProceso" type="xs:int" />
+              <xs:element name="IdSubProceso" msprop:Generator_ColumnVarNameInTable="columnIdSubProceso" msprop:Generator_ColumnPropNameInRow="IdSubProceso" msprop:Generator_ColumnPropNameInTable="IdSubProcesoColumn" msprop:Generator_UserColumnName="IdSubProceso" type="xs:int" minOccurs="0" />
+              <xs:element name="IdServicio" msprop:Generator_ColumnVarNameInTable="columnIdServicio" msprop:Generator_ColumnPropNameInRow="IdServicio" msprop:Generator_ColumnPropNameInTable="IdServicioColumn" msprop:Generator_UserColumnName="IdServicio" type="xs:int" />
+              <xs:element name="Anulado" msprop:Generator_ColumnVarNameInTable="columnAnulado" msprop:Generator_ColumnPropNameInRow="Anulado" msprop:Generator_ColumnPropNameInTable="AnuladoColumn" msprop:Generator_UserColumnName="Anulado" type="xs:int" minOccurs="0" />
+              <xs:element name="IdEstado" msprop:Generator_ColumnVarNameInTable="columnIdEstado" msprop:Generator_ColumnPropNameInRow="IdEstado" msprop:Generator_ColumnPropNameInTable="IdEstadoColumn" msprop:Generator_UserColumnName="IdEstado" type="xs:int" minOccurs="0" />
+              <xs:element name="EstadoItem" msprop:Generator_ColumnVarNameInTable="columnEstadoItem" msprop:Generator_ColumnPropNameInRow="EstadoItem" msprop:Generator_ColumnPropNameInTable="EstadoItemColumn" msprop:Generator_UserColumnName="EstadoItem" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
